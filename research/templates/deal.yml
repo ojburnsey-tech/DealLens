@@ -1,0 +1,104 @@
+# Replace the example identity and date. Null means unknown; zero means established zero.
+# Monetary values need unit, currency, scale, definition and evidence IDs.
+# See research/templates/README.md for complete input shapes.
+schema_version: 1
+identity:
+  deal_id: DL-00000
+  name: Bidder / Target
+  announcement_date: '2000-01-01'
+  completion_date: null
+  transaction_status: ANNOUNCED
+bidder:
+  name: Bidder legal name
+  country: GB
+  company_number: null
+target:
+  name: Target legal name
+  country: GB
+  company_number: null
+review_status: DRAFT
+offer_terms: []
+selected_offer_id: null
+transaction_valuation:
+  reported_equity_value: null
+  reported_enterprise_value: null
+  reported_transaction_value: null
+  share_components: []
+  share_basis: null
+  equity_for_ev: null
+  ev_adjustments: []
+  ev_bridge_basis: null
+  preferred_ev_basis: reported
+unaffected_price: []
+target_financials:
+  revenue:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  ebitda:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  ebit:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  net_income:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  cash: null
+  debt: null
+  net_debt: null
+  diluted_shares: null
+buyer_financials:
+  revenue:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  ebitda:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  ebit:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  net_income:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  cash: null
+  debt: null
+  net_debt: null
+  diluted_shares: null
+synergies: []
+financing:
+  description: null
+  committed_facility: null
+  new_debt: null
+  cash_consideration: null
+  fees: null
+  new_equity_proceeds: null
+  disposal_proceeds: null
+  evidence: []
+consideration: null
+leverage_inputs: null
+accretion_inputs: null
+strategic_rationale: []
+risks: []
+sources: []
+field_evidence: []
+review_notes:
+  notes: []
+  reviewer: null
+  reviewed_at: null
+  verification_notes: null

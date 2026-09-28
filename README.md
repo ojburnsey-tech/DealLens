@@ -1,3 +1,24 @@
+# Implemented DealLens workflow
+
+Reusable portfolio analytics, precedent screening and six research notebooks are also available; see [analytics documentation](docs/analytics.md). The real dataset still has zero VERIFIED transactions.
+
+Steps 8–20 are implemented: YAML ingestion, auditable finance calculations, financial QA and Companies House metadata. The full suite has **403 passing tests**; the independent finance review has **zero open CRITICAL/HIGH findings**.
+
+The Britvic case for steps 21–22 is **DRAFT**, with primary-source reconciliation tests. Its full scheme document and your manual sign-off remain outstanding. Read the [step-by-step acceptance checklist](docs/implementation_checklist.md), [deal review sheet](research/inbox/DL-00001_REVIEW.md) and [gold-standard reconciliation](docs/gold_standard_validation.md). The checklist records the independent finance-review outcome; the ZIP does not include the underlying review file.
+
+```bash
+python -m pip install -e '.[dev]'
+deallens deal validate research/inbox/DL-00001.yml
+deallens deal import research/inbox/DL-00001.yml
+deallens deal calculate DL-00001
+deallens qa deal DL-00001
+deallens evidence audit DL-00001
+```
+
+QA exits 2 while a record is not publishable; that is expected for this DRAFT case. Reimporting an existing ID fails atomically. See [research instructions](research/templates/README.md) for template creation and the explicit manual verification/export workflow.
+
+---
+
 # DealLens
 ## UK & European M&A Intelligence
 
@@ -10,6 +31,31 @@
 ![Data](https://img.shields.io/badge/data-public%20sources-success)
 
 ---
+
+## Run the implementation
+
+The repository now includes a Python research-ingestion workflow and financial calculation engine.
+The longer sections below describe the project methodology and future roadmap; they are not a claim that the 50-deal database or dashboard is already complete.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -e ".[dev]"
+python -m pytest -q
+python -m ruff check .
+deallens deal template --output research/inbox/DL-00002.yml
+deallens deal validate research/inbox/DL-00002.yml
+deallens deal import research/inbox/DL-00002.yml
+deallens deal show DL-00002
+deallens deal calculate DL-00002
+```
+
+Edit the generated identity to `DL-00002` before importing. The starter template uses `DL-00000` and deliberately leaves unknown financials empty.
+Set `DEALLENS_DB` or use `deallens --db path/to/deals.duckdb ...` to choose the database.
+
+- [Research input formats](research/templates/README.md)
+- [Finance implementation methodology](docs/finance_methodology.md)
+- [Step-by-step acceptance checklist](docs/implementation_checklist.md)
 
 ## Table of Contents
 

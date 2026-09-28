@@ -1,0 +1,2 @@
+[console_scripts]
+deallens = deallens.cli:main

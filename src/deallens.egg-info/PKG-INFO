@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: deallens
+Version: 0.1.0
+Summary: Source-auditable UK and European transaction research
+Requires-Python: >=3.12
+Requires-Dist: duckdb<2,>=1.1
+Requires-Dist: pydantic<3,>=2.9
+Requires-Dist: PyYAML<7,>=6
+Requires-Dist: httpx<1,>=0.27
+Requires-Dist: reportlab<5,>=4.2
+Provides-Extra: dev
+Requires-Dist: pytest<10,>=8; extra == "dev"
+Requires-Dist: ruff<1,>=0.9; extra == "dev"
+Requires-Dist: mypy<3,>=1.15; extra == "dev"
+Requires-Dist: types-PyYAML<7,>=6; extra == "dev"
+Requires-Dist: pytest-cov<8,>=6; extra == "dev"
+Requires-Dist: pypdf<7,>=5; extra == "dev"
+Requires-Dist: pip-audit<3,>=2.9; extra == "dev"
+Provides-Extra: notebooks
+Requires-Dist: nbformat<6,>=5.10; extra == "notebooks"
+Requires-Dist: nbclient<1,>=0.10; extra == "notebooks"
+Requires-Dist: ipykernel<8,>=6; extra == "notebooks"
+Requires-Dist: matplotlib<4,>=3.9; extra == "notebooks"

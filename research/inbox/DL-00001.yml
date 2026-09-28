@@ -1,0 +1,1239 @@
+# PROVISIONAL PRIMARY-SOURCE CASE — DRAFT, not manually verified.
+schema_version: 1
+identity:
+  deal_id: DL-00001
+  name: Carlsberg UK Holdings / Britvic
+  announcement_date: '2024-07-08'
+  completion_date: '2025-01-16'
+  transaction_status: COMPLETED
+bidder:
+  name: Carlsberg UK Holdings Limited
+  country: GB
+  company_number: null
+target:
+  name: Britvic plc
+  country: GB
+  company_number: 05604923
+review_status: DRAFT
+offer_terms:
+- offer_id: announced_total_value
+  stage: initial
+  date: '2024-07-08'
+  price:
+    value: '1315'
+    unit: currency/share
+    currency: GBP
+    scale: '0.01'
+    definition: Total shareholder value including 25p special dividend
+    period: null
+    as_of: null
+    evidence:
+    - ET
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  basis: First firm Rule 2.7 offer, including target special dividend; earlier indicative
+    proposals are not entered
+- offer_id: effective_total_value
+  stage: final
+  date: '2025-01-16'
+  price:
+    value: '1315'
+    unit: currency/share
+    currency: GBP
+    scale: '0.01'
+    definition: Total shareholder value including special dividend
+    period: null
+    as_of: null
+    evidence:
+    - ECOMP
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  basis: Effective scheme consideration; not a price revision
+selected_offer_id: announced_total_value
+transaction_valuation:
+  reported_equity_value:
+    value: '3311'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Reported rounded shareholder equity value inclusive of special dividend
+    period: null
+    as_of: null
+    evidence:
+    - EEV
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  reported_enterprise_value:
+    value: '4104'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Reported rounded enterprise value
+    period: null
+    as_of: null
+    evidence:
+    - EEV
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  reported_transaction_value: null
+  share_components:
+  - component_id: ordinary_net
+    kind: ordinary
+    shares:
+      value: '245427332'
+      unit: shares
+      currency: null
+      scale: '1'
+      definition: Ordinary shares after disclosed EBT and hedge deductions
+      period: null
+      as_of: null
+      evidence:
+      - ESH
+      classification: CALCULATED
+      ambiguity: null
+      derivation:
+        result: '245427332'
+        unit: shares
+        currency: null
+        formula: Issued - EBT - hedge shares
+        basis: Ordinary shares after disclosed EBT and hedge deductions
+        inputs:
+          issued:
+            value: '248906262'
+            unit: shares
+            currency: null
+            scale: '1'
+            definition: issued
+            period: null
+            as_of: null
+            evidence:
+            - ESH
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          EBT:
+            value: '1693930'
+            unit: shares
+            currency: null
+            scale: '1'
+            definition: EBT
+            period: null
+            as_of: null
+            evidence:
+            - ESH
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          hedges:
+            value: '1785000'
+            unit: shares
+            currency: null
+            scale: '1'
+            definition: hedges
+            period: null
+            as_of: null
+            evidence:
+            - ESH
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+        warnings: []
+        period: null
+        illustrative: false
+        qualifications: []
+    method: gross
+    exercise_price: null
+    basis: Appendix 2 deductions retained in shares.derivation
+  - component_id: plans
+    kind: employee_awards
+    shares:
+      value: '6028506'
+      unit: shares
+      currency: null
+      scale: '1'
+      definition: plans
+      period: null
+      as_of: null
+      evidence:
+      - ESH
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    method: gross
+    exercise_price: null
+    basis: Aggregate disclosed share plans; no unsupported split into instrument types
+  - component_id: future_grants
+    kind: employee_awards
+    shares:
+      value: '351897'
+      unit: shares
+      currency: null
+      scale: '1'
+      definition: future_grants
+      period: null
+      as_of: null
+      evidence:
+      - ESH
+      classification: ASSUMPTION
+      ambiguity: null
+      derivation: null
+    method: gross
+    exercise_price: null
+    basis: Aggregate disclosed share plans; no unsupported split into instrument types
+  share_basis: Appendix 2 issued plus plans plus future grants less EBT and hedges;
+    aggregate employee plans avoid invented instrument splits
+  equity_for_ev:
+    value: '3311'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Reported rounded shareholder equity value inclusive of special dividend
+    period: null
+    as_of: null
+    evidence:
+    - EEV
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  ev_adjustments:
+  - adjustment_id: net_debt
+    kind: net_debt
+    amount:
+      value: '694'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted net debt excluding leases
+      period: null
+      as_of: '2024-03-31'
+      evidence:
+      - EEV
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    sign: 1
+    basis: Explicit Appendix 2 paragraph 5 adjustment; no default adjustments
+  - adjustment_id: leases
+    kind: other
+    amount:
+      value: '70'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Lease liabilities rounded
+      period: null
+      as_of: '2024-03-31'
+      evidence:
+      - EEV
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    sign: 1
+    basis: Explicit Appendix 2 paragraph 5 adjustment; no default adjustments
+  - adjustment_id: buybacks
+    kind: other
+    amount:
+      value: '5.5'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Buyback cash spent through suspension on 25 June
+      period: null
+      as_of: null
+      evidence:
+      - EEV
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    sign: 1
+    basis: Explicit Appendix 2 paragraph 5 adjustment; no default adjustments
+  - adjustment_id: cash_awards
+    kind: other
+    amount:
+      value: '23.9'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Estimated cash settlement of share awards
+      period: null
+      as_of: null
+      evidence:
+      - EEV
+      classification: ASSUMPTION
+      ambiguity: null
+      derivation: null
+    sign: 1
+    basis: Explicit Appendix 2 paragraph 5 adjustment; no default adjustments
+  ev_bridge_basis: Reproduce announcement bridge from reported rounded equity and
+    each explicit adjustment; historical balance sheet and subsequent buybacks are
+    deliberately combined as disclosed
+  preferred_ev_basis: reported
+  snapshot_alignment_basis: null
+unaffected_price:
+- reference_id: close_19_june
+  price:
+    value: '970'
+    unit: currency/share
+    currency: GBP
+    scale: '0.01'
+    definition: unaffected_close
+    period: null
+    as_of: '2024-06-19'
+    evidence:
+    - EREF
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  reference_date: '2024-06-19'
+  reference_basis: unaffected_close
+  selection_notes: Date explicitly stated in announcement, before speculation. Proposed
+    research selection awaiting owner manual review; not selected by calculation code.
+- reference_id: vwap_3m_19_june
+  price:
+    value: '897'
+    unit: currency/share
+    currency: GBP
+    scale: '0.01'
+    definition: 3M_VWAP
+    period: null
+    as_of: '2024-06-19'
+    evidence:
+    - EREF
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  reference_date: '2024-06-19'
+  reference_basis: 3M_VWAP
+  selection_notes: Date explicitly stated in announcement, before speculation. Proposed
+    research selection awaiting owner manual review; not selected by calculation code.
+target_financials:
+  revenue:
+    latest_fy:
+      value: '1748.6'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Reported revenue at actual exchange rates
+      period:
+        start: '2022-10-01'
+        end: '2023-09-30'
+        basis: FY
+      as_of: null
+      evidence:
+      - EFY
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    current_ytd:
+      value: '880.3'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Reported revenue at actual exchange rates
+      period:
+        start: '2023-10-01'
+        end: '2024-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    prior_ytd:
+      value: '794.0'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Reported revenue at actual exchange rates
+      period:
+        start: '2022-10-01'
+        end: '2023-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    selected:
+      value: '1834900000.0'
+      unit: currency
+      currency: GBP
+      scale: '1'
+      definition: LTM revenue; Reported revenue at actual exchange rates
+      period:
+        start: '2023-04-01'
+        end: '2024-03-31'
+        basis: LTM
+      as_of: null
+      evidence:
+      - EFY
+      - EH1
+      classification: CALCULATED
+      ambiguity: null
+      derivation:
+        result: '1834900000.0'
+        unit: currency
+        currency: GBP
+        formula: Latest FY + Current YTD - Prior-year comparable YTD
+        basis: LTM revenue; Reported revenue at actual exchange rates
+        inputs:
+          latest_fy:
+            value: '1748.6'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: Reported revenue at actual exchange rates
+            period:
+              start: '2022-10-01'
+              end: '2023-09-30'
+              basis: FY
+            as_of: null
+            evidence:
+            - EFY
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          current_ytd:
+            value: '880.3'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: Reported revenue at actual exchange rates
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EH1
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          prior_ytd:
+            value: '794.0'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: Reported revenue at actual exchange rates
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EH1
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+        warnings:
+        - YTD lengths differ by one day; verify leap-year comparability.
+        period:
+          start: '2023-04-01'
+          end: '2024-03-31'
+          basis: LTM
+        illustrative: false
+        qualifications: []
+  ebitda:
+    latest_fy:
+      value: '287.6'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted EBITDA before pre-IFRS16 rental charges
+      period:
+        start: '2022-10-01'
+        end: '2023-09-30'
+        basis: FY
+      as_of: null
+      evidence:
+      - EFY
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    current_ytd:
+      value: '132400000.0'
+      unit: currency
+      currency: GBP
+      scale: '1'
+      definition: Adjusted EBITDA before pre-IFRS16 rental charges
+      period:
+        start: '2023-10-01'
+        end: '2024-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      - EHDA
+      classification: CALCULATED
+      ambiguity: null
+      derivation:
+        result: '132400000.0'
+        unit: currency
+        currency: GBP
+        formula: Adjusted EBIT + PPE depreciation + ROU depreciation + amortisation
+          + disposal loss - acquisition amortisation
+        basis: Adjusted EBITDA before pre-IFRS16 rental charges
+        inputs:
+          adjusted_ebit:
+            value: '100.4'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: adjusted_ebit
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EH1
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          ppe_depreciation:
+            value: '23.7'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: ppe_depreciation
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          rou_depreciation:
+            value: '4.5'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: rou_depreciation
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          amortisation:
+            value: '9.6'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: amortisation
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          disposal_loss:
+            value: '0'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: disposal_loss
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          acquisition_amortisation:
+            value: '5.8'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: acquisition_amortisation
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+        warnings: []
+        period:
+          start: '2023-10-01'
+          end: '2024-03-31'
+          basis: YTD
+        illustrative: false
+        qualifications: []
+    prior_ytd:
+      value: '117500000.0'
+      unit: currency
+      currency: GBP
+      scale: '1'
+      definition: Adjusted EBITDA before pre-IFRS16 rental charges
+      period:
+        start: '2022-10-01'
+        end: '2023-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      - EHDA
+      classification: CALCULATED
+      ambiguity: null
+      derivation:
+        result: '117500000.0'
+        unit: currency
+        currency: GBP
+        formula: Adjusted EBIT + PPE depreciation + ROU depreciation + amortisation
+          + disposal loss - acquisition amortisation
+        basis: Adjusted EBITDA before pre-IFRS16 rental charges
+        inputs:
+          adjusted_ebit:
+            value: '85.3'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: adjusted_ebit
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EH1
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          ppe_depreciation:
+            value: '21.7'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: ppe_depreciation
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          rou_depreciation:
+            value: '5.1'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: rou_depreciation
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          amortisation:
+            value: '8.0'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: amortisation
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          disposal_loss:
+            value: '1.7'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: disposal_loss
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          acquisition_amortisation:
+            value: '4.3'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: acquisition_amortisation
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EHDA
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+        warnings: []
+        period:
+          start: '2022-10-01'
+          end: '2023-03-31'
+          basis: YTD
+        illustrative: false
+        qualifications: []
+    selected:
+      value: '303'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted EBITDA before pre-IFRS16 rental charges
+      period:
+        start: '2023-04-01'
+        end: '2024-03-31'
+        basis: LTM
+      as_of: null
+      evidence:
+      - ELTM
+      classification: REPORTED
+      ambiguity: Rounded announcement value; reconstructed 302.5m. Do not substitute
+        covenant EBITDA after rental charges.
+      derivation: null
+  ebit:
+    latest_fy:
+      value: '218.4'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted EBIT
+      period:
+        start: '2022-10-01'
+        end: '2023-09-30'
+        basis: FY
+      as_of: null
+      evidence:
+      - EFY
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    current_ytd:
+      value: '100.4'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted EBIT
+      period:
+        start: '2023-10-01'
+        end: '2024-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    prior_ytd:
+      value: '85.3'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted EBIT
+      period:
+        start: '2022-10-01'
+        end: '2023-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    selected:
+      value: '233500000.0'
+      unit: currency
+      currency: GBP
+      scale: '1'
+      definition: LTM ebit; Adjusted EBIT
+      period:
+        start: '2023-04-01'
+        end: '2024-03-31'
+        basis: LTM
+      as_of: null
+      evidence:
+      - EFY
+      - EH1
+      classification: CALCULATED
+      ambiguity: null
+      derivation:
+        result: '233500000.0'
+        unit: currency
+        currency: GBP
+        formula: Latest FY + Current YTD - Prior-year comparable YTD
+        basis: LTM ebit; Adjusted EBIT
+        inputs:
+          latest_fy:
+            value: '218.4'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: Adjusted EBIT
+            period:
+              start: '2022-10-01'
+              end: '2023-09-30'
+              basis: FY
+            as_of: null
+            evidence:
+            - EFY
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          current_ytd:
+            value: '100.4'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: Adjusted EBIT
+            period:
+              start: '2023-10-01'
+              end: '2024-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EH1
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+          prior_ytd:
+            value: '85.3'
+            unit: currency
+            currency: GBP
+            scale: '1000000'
+            definition: Adjusted EBIT
+            period:
+              start: '2022-10-01'
+              end: '2023-03-31'
+              basis: YTD
+            as_of: null
+            evidence:
+            - EH1
+            classification: REPORTED
+            ambiguity: null
+            derivation: null
+        warnings:
+        - YTD lengths differ by one day; verify leap-year comparability.
+        period:
+          start: '2023-04-01'
+          end: '2024-03-31'
+          basis: LTM
+        illustrative: false
+        qualifications: []
+  net_income:
+    latest_fy:
+      value: '156.7'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted earnings attributable to equity shareholders
+      period:
+        start: '2022-10-01'
+        end: '2023-09-30'
+        basis: FY
+      as_of: null
+      evidence:
+      - EFY
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    current_ytd:
+      value: '67.0'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted earnings attributable to equity shareholders
+      period:
+        start: '2023-10-01'
+        end: '2024-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    prior_ytd:
+      value: '58.9'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted earnings attributable to equity shareholders
+      period:
+        start: '2022-10-01'
+        end: '2023-03-31'
+        basis: YTD
+      as_of: null
+      evidence:
+      - EH1
+      classification: REPORTED
+      ambiguity: null
+      derivation: null
+    selected:
+      value: '165'
+      unit: currency
+      currency: GBP
+      scale: '1000000'
+      definition: Adjusted earnings attributable to equity shareholders
+      period:
+        start: '2023-04-01'
+        end: '2024-03-31'
+        basis: LTM
+      as_of: null
+      evidence:
+      - ELTM
+      classification: REPORTED
+      ambiguity: Rounded announcement amount; reconstructed adjusted earnings are
+        164.8m, not statutory net income.
+      derivation: null
+  cash:
+    value: '29.8'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Cash and cash equivalents, excluding deposits
+    period: null
+    as_of: '2024-03-31'
+    evidence:
+    - END
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  debt:
+    value: '713.5'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Interest-bearing loans and borrowings, excluding overdrafts and leases
+    period: null
+    as_of: '2024-03-31'
+    evidence:
+    - END
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  net_debt:
+    value: '694'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Adjusted net debt excluding leases, including overdrafts/deposits/derivatives
+    period: null
+    as_of: '2024-03-31'
+    evidence:
+    - END
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  diluted_shares: null
+buyer_financials:
+  revenue:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  ebitda:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  ebit:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  net_income:
+    latest_fy: null
+    current_ytd: null
+    prior_ytd: null
+    selected: null
+  cash: null
+  debt: null
+  net_debt: null
+  diluted_shares: null
+synergies:
+- synergy_id: annual_cost
+  kind: cost
+  amount:
+    value: '100'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Estimated annual run-rate cost savings
+    period:
+      start: '2030-01-01'
+      end: '2030-12-31'
+      basis: RUN_RATE
+    as_of: null
+    evidence:
+    - ESYN
+    classification: REPORTED
+    ambiguity: Illustrative annual window only; source says over five years, not a
+      calendar-year earnings forecast.
+    derivation: null
+  eligible: true
+  realisation_months: 60
+  revenue_margin: null
+  basis: Illustrative full run-rate eligibility; no assertion of realised savings
+- synergy_id: implementation
+  kind: implementation_cost
+  amount:
+    value: '83'
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Estimated total implementation costs
+    period: null
+    as_of: null
+    evidence:
+    - ESYN
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  eligible: false
+  realisation_months: 60
+  revenue_margin: null
+  basis: Total non-recurring costs over realisation period, not annual EBITDA deduction
+- synergy_id: revenue
+  kind: revenue
+  amount:
+    value: null
+    unit: currency
+    currency: GBP
+    scale: '1000000'
+    definition: Unquantified revenue opportunities
+    period: null
+    as_of: null
+    evidence:
+    - ESYN
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  eligible: false
+  realisation_months: null
+  revenue_margin: null
+  basis: No quantified revenue synergy or margin; no EBITDA conversion
+financing:
+  description: Third-party debt financing through Carlsberg Breweries, arranged with
+    BNP Paribas, Danske Bank and SEB. Exact full financing bridge not established
+    in this case.
+  committed_facility: null
+  new_debt: null
+  cash_consideration: null
+  fees: null
+  new_equity_proceeds: null
+  disposal_proceeds: null
+  evidence:
+  - EFIN
+consideration:
+  cash:
+    value: '1290'
+    unit: currency/share
+    currency: GBP
+    scale: '0.01'
+    definition: Bidder acquisition cash price
+    period: null
+    as_of: null
+    evidence:
+    - ET
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  exchange_ratio:
+    value: '0'
+    unit: ratio
+    currency: null
+    scale: '1'
+    definition: No bidder shares in the cash offer
+    period: null
+    as_of: null
+    evidence:
+    - ET
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  bidder_price: null
+  bidder_reference_date: null
+  other:
+    value: '25'
+    unit: currency/share
+    currency: GBP
+    scale: '0.01'
+    definition: 'Target-paid special dividend: shareholder value only, not bidder
+      funding'
+    period: null
+    as_of: null
+    evidence:
+    - ET
+    classification: REPORTED
+    ambiguity: null
+    derivation: null
+  structure: fixed
+  reference_basis: Total shareholder receipts = buyer cash + target special dividend;
+    do not use total as buyer cash financing
+leverage_inputs: null
+accretion_inputs: null
+strategic_rationale:
+- 'Rule 2.7 sections 3 and 8: combine beer and soft-drinks distribution and procurement;
+  expand multi-beverage offering.'
+risks:
+- Forecast cost savings depend on implementation and timing; not realised financials.
+- Announcement-era financial snapshot, not completion-date debt or funding.
+- Full scheme document has not been retrieved; publication announcement and FCA resolution
+  are not substitutes.
+sources:
+- source_id: S27
+  title: Carlsberg / Britvic Rule 2.7 announcement
+  url: https://via.ritzau.dk/ir-files/13560234/13952907/13641/2.7%20Announcement_Recommended%20offer%20to%20acquire%20Britvic%20plc.pdf
+  publication_date: '2024-07-08'
+  source_type: ANNOUNCEMENT
+- source_id: SFY
+  title: Britvic Annual Report and Accounts 2023 (issuer report mirrored by AnnualReports)
+  url: https://www.annualreports.com/HostedData/AnnualReportArchive/b/LSE_BVIC_2023.pdf
+  publication_date: '2023-12-05'
+  source_type: ANNUAL_REPORT
+- source_id: SH1
+  title: 'Britvic interim results: six months ended 31 March 2024'
+  url: https://www.britvic.com/media/1mlaxssy/britvic-plc-interim-results-14-may-2024.pdf
+  publication_date: '2024-05-15'
+  source_type: INTERIM_REPORT
+- source_id: SCOMP
+  title: Scheme of arrangement becomes effective
+  url: https://www.carlsberggroup.com/media/i2vbt04o/160125-announcement-of-scheme-effective-date.pdf
+  publication_date: '2025-01-16'
+  source_type: ANNOUNCEMENT
+- source_id: SPUB
+  title: Publication of scheme document announcement (not the full scheme)
+  url: https://www.carlsberggroup.com/media/ctoc5uiy/publication-of-scheme-document-announcement.pdf
+  publication_date: '2024-07-22'
+  source_type: ANNOUNCEMENT
+- source_id: SRES
+  title: Britvic shareholder special resolution approving scheme arrangements
+  url: https://data.fca.org.uk/artefacts/NSM/Portal/NI-000103290/NI-000103290.pdf
+  publication_date: '2024-08-27'
+  source_type: REGULATOR
+field_evidence:
+- evidence_id: ET
+  source_id: S27
+  section: pp. 1–2, Acquisition terms
+  reported_unit: pence/share
+  note: 1315 total shareholder value comprises 1290 acquisition cash plus 25 special
+    dividend; not identical to buyer cash funding.
+- evidence_id: EREF
+  source_id: S27
+  section: p. 1, premium references
+  reported_unit: pence/share
+  note: 970 close and 897 three-month VWAP to 19 June 2024. Announcement-selected
+    reference proposed for manual review.
+- evidence_id: ESH
+  source_id: S27
+  section: p. 51, Appendix 2 paragraphs 3–4 and footnote 1
+  reported_unit: shares
+  note: 248906262 issued + 6028506 plans + 351897 future grants - 1693930 EBT - 1785000
+    hedges. Future grants are an explicit issuer estimate.
+- evidence_id: EEV
+  source_id: S27
+  section: p. 51, Appendix 2 paragraphs 4–5
+  reported_unit: GBP million
+  note: Reported equity 3311 and EV 4104; adjustments 694 net debt, 70 leases, 5.5
+    buybacks, 23.9 cash-settled awards; rounded/estimated inputs.
+- evidence_id: ELTM
+  source_id: S27
+  section: p. 52, Appendix 2 paragraphs 6–8
+  reported_unit: GBP million
+  note: Reported adjusted LTM EBITDA 303 and adjusted earnings 165 are rounded. Underlying
+    statements permit separate reconstruction.
+- evidence_id: ESYN
+  source_id: S27
+  section: pp. 3–4 and section 8, cost savings
+  reported_unit: GBP million; years
+  note: Estimated annual cost savings 100, implementation costs approximately 83 over
+    five years. Revenue opportunities unquantified. Calendar window used for RUN_RATE
+    is an illustrative representation, not issuer guidance.
+- evidence_id: EFIN
+  source_id: S27
+  section: section 11, Financing of the Acquisition (p. 23)
+  reported_unit: not applicable
+  note: Third-party debt arranged through Carlsberg Breweries; sufficient-resources
+    confirmation. This extract does not establish all leverage/EPS inputs.
+- evidence_id: EFY
+  source_id: SFY
+  section: printed pp. 132 and 191–192 (PDF pp. 134, 193–194)
+  reported_unit: GBP million
+  note: FY revenue 1748.6, adjusted EBIT 218.4, adjusted earnings 156.7 and EBITDA
+    before pre-IFRS16 rental charges 287.6; covenant EBITDA 276.7 uses a different
+    definition.
+- evidence_id: EH1
+  source_id: SH1
+  section: p. 1, financial headlines; p. 34 adjusted earnings
+  reported_unit: GBP million
+  note: Current/prior H1 revenue 880.3/794.0; adjusted EBIT 100.4/85.3; adjusted earnings
+    67.0/58.9. Publication date is 15 May despite URL filename.
+- evidence_id: EHDA
+  source_id: SH1
+  section: p. 20 cash flows and p. 34 adjustments
+  reported_unit: GBP million
+  note: Current/prior PPE depreciation 23.7/21.7; ROU depreciation 4.5/5.1; amortisation
+    9.6/8.0; disposal loss 0/1.7; acquisition amortisation 5.8/4.3.
+- evidence_id: END
+  source_id: SH1
+  section: p. 26 borrowings; p. 34 adjusted net debt
+  reported_unit: GBP million
+  note: 'At 31 March: loans 713.5, cash equivalents 29.8, deposits 6.1, overdrafts
+    29.2, derivative assets 12.8. Adjusted net debt excludes leases; debt minus cash
+    alone is not this definition.'
+- evidence_id: ECOMP
+  source_id: SCOMP
+  section: p. 1, effectiveness and shareholder consideration
+  reported_unit: pence/share; date
+  note: Scheme effective 16 January 2025; 1290 acquisition price plus 25 special dividend.
+review_notes:
+  notes:
+  - Prepared from primary issuer documents; no owner manual verification has occurred.
+  - S27 establishes offer economics, SPUB establishes scheme publication, SRES establishes
+    target identity/approval, SCOMP establishes completion. Full scheme document remains
+    a required source gap.
+  - Selected premium reference date is explicitly sourced and awaits owner confirmation.
+  - 'Leverage and simplified EPS inputs remain null: compatible buyer financials,
+    actual debt funding, fees, FX and recurring adjustments have not been established.
+    Do not backsolve from headline leverage.'
+  - Review every material number against DL-00001_REVIEW.md; only then use the explicit
+    manual verification command.
+  reviewer: null
+  reviewed_at: null
+  verification_notes: null

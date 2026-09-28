@@ -8,11 +8,13 @@ Requires-Dist: pydantic<3,>=2.9
 Requires-Dist: PyYAML<7,>=6
 Requires-Dist: httpx<1,>=0.27
 Requires-Dist: reportlab<5,>=4.2
+Requires-Dist: streamlit<2,>=1.40
 Provides-Extra: dev
 Requires-Dist: pytest<10,>=8; extra == "dev"
 Requires-Dist: ruff<1,>=0.9; extra == "dev"
 Requires-Dist: mypy<3,>=1.15; extra == "dev"
 Requires-Dist: types-PyYAML<7,>=6; extra == "dev"
+Requires-Dist: types-reportlab<5,>=4; extra == "dev"
 Requires-Dist: pytest-cov<8,>=6; extra == "dev"
 Requires-Dist: pypdf<7,>=5; extra == "dev"
 Requires-Dist: pip-audit<3,>=2.9; extra == "dev"

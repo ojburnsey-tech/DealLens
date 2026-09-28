@@ -22,9 +22,11 @@ src/deallens.egg-info/requires.txt
 src/deallens.egg-info/top_level.txt
 tests/test_analytics_precedents.py
 tests/test_companies_house.py
+tests/test_dashboard.py
 tests/test_finance.py
 tests/test_finance_review_regressions.py
 tests/test_gold_standard.py
 tests/test_qa.py
 tests/test_releases.py
+tests/test_reports.py
 tests/test_research.py

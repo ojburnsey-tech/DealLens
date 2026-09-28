@@ -3,12 +3,14 @@ pydantic<3,>=2.9
 PyYAML<7,>=6
 httpx<1,>=0.27
 reportlab<5,>=4.2
+streamlit<2,>=1.40
 
 [dev]
 pytest<10,>=8
 ruff<1,>=0.9
 mypy<3,>=1.15
 types-PyYAML<7,>=6
+types-reportlab<5,>=4
 pytest-cov<8,>=6
 pypdf<7,>=5
 pip-audit<3,>=2.9

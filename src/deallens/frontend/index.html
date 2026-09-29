@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101a20">
-  <meta name="description" content="DealLens local M&A research workspace with source linked transaction records and verified portfolio analytics.">
+  <meta name="description" content="DealLens M&A research workspace with source linked transaction records and verified portfolio analytics.">
+  <meta name="deallens-api" content="/api/data">
   <title>DealLens | Research workspace</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="data.js"></script>
@@ -22,6 +23,11 @@
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
     <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v4h16v-4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M7 15l4-4 3 2 6-7"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><circle cx="7" cy="7" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 19 19 5"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="m3 8 9-5 9 5M4 9h16M5 19h14M3 22h18M7 10v8m5-8v8m5-8v8"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
   </svg>
 
   <div class="app-shell">
@@ -35,7 +41,19 @@
       <nav class="primary-nav">
         <a href="#overview" data-nav="overview"><svg><use href="#i-grid"/></svg>Overview<span class="nav-key">01</span></a>
         <a href="#research" data-nav="research"><svg><use href="#i-layers"/></svg>Research ledger<span class="nav-key">02</span></a>
-        <a href="#methodology" data-nav="methodology"><svg><use href="#i-route"/></svg>Methodology<span class="nav-key">03</span></a>
+      </nav>
+      <p class="sidebar-label sidebar-group">ANALYSIS</p>
+      <nav class="primary-nav">
+        <a href="#valuation" data-nav="valuation"><svg><use href="#i-chart"/></svg>Valuation<span class="nav-key">03</span></a>
+        <a href="#premiums" data-nav="premiums"><svg><use href="#i-percent"/></svg>Offer premiums<span class="nav-key">04</span></a>
+        <a href="#financing" data-nav="financing"><svg><use href="#i-bank"/></svg>Financing<span class="nav-key">05</span></a>
+        <a href="#synergies" data-nav="synergies"><svg><use href="#i-spark"/></svg>Synergies<span class="nav-key">06</span></a>
+        <a href="#outcomes" data-nav="outcomes"><svg><use href="#i-check"/></svg>Deal outcomes<span class="nav-key">07</span></a>
+      </nav>
+      <p class="sidebar-label sidebar-group">REFERENCE</p>
+      <nav class="primary-nav">
+        <a href="#quality" data-nav="quality"><svg><use href="#i-search"/></svg>Data quality<span class="nav-key">08</span></a>
+        <a href="#methodology" data-nav="methodology"><svg><use href="#i-book"/></svg>Methodology<span class="nav-key">09</span></a>
       </nav>
       <div class="sidebar-bottom">
         <div class="sidebar-note"><span class="small-accent"></span><p>Evidence first.<br><strong>Every figure has a status.</strong></p></div>
@@ -52,6 +70,7 @@
       <main id="app" tabindex="-1" aria-live="polite">
         <div class="loading-state"><div class="loading-symbol"></div><p>Opening research workspace…</p></div>
       </main>
+      <noscript><p class="error-state">DealLens needs JavaScript to display the research workspace.</p></noscript>
       <footer class="footer"><span>DEALLENS <span class="footer-dot">/</span> SOURCE AUDITABLE RESEARCH</span><span id="footer-mode">LOCAL SNAPSHOT</span></footer>
     </div>
   </div>

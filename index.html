@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101a20">
-  <meta name="description" content="DealLens local M&A research workspace with source linked transaction records and verified portfolio analytics.">
+  <meta name="description" content="DealLens M&A research workspace with source linked transaction records and verified portfolio analytics.">
   <title>DealLens | Research workspace</title>
   <style>
 :root{--ink:#142128;--ink-2:#1d3038;--muted:#647179;--subtle:#8a9699;--line:#dce2df;--paper:#f4f5f1;--white:#fff;--lime:#d7e7a0;--signal:#b9d46e;--amber:#e8b877;--rust:#a6563b;--sidebar:#102027;--sidebar-line:#2b3b40;--serif:Georgia,"Times New Roman",serif;--sans:Inter,"Aptos","Segoe UI",Arial,sans-serif}
@@ -22,6 +22,11 @@ main{padding:44px clamp(24px,4vw,60px) 80px;max-width:1640px;width:100%;margin:0
 @media(max-width:1150px){.app-shell{grid-template-columns:208px 1fr}.sidebar{padding-left:12px;padding-right:12px}.metric-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1.2fr .8fr}.hero-art svg{width:280px}.content-grid,.case-grid{grid-template-columns:1fr 1fr}.panel-head{padding:21px 20px 0}.pipeline{padding-left:19px;padding-right:19px}}
 @media(max-width:850px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;left:0;top:0;width:240px;transform:translateX(-100%);transition:transform .2s ease;box-shadow:0 10px 40px #15241b44}.sidebar.open{transform:translateX(0)}.mobile-menu{display:grid;gap:3px;background:transparent;border:0;padding:7px;margin-left:-7px}.mobile-menu span{display:block;width:18px;height:2px;background:#425a4b}.topbar{justify-content:flex-start;gap:18px}.topbar-right{margin-left:auto}.hero{grid-template-columns:1fr}.hero-art{position:absolute;opacity:.3;right:-50px;top:12px;bottom:0}.hero-copy{max-width:600px}.content-grid,.case-grid{grid-template-columns:1fr}.method-intro{grid-template-columns:1fr;gap:13px}}
 @media(max-width:600px){main{padding:27px 17px 60px}.topbar{height:61px;padding:0 19px}.topbar-clock,.topbar-divider{display:none}.breadcrumbs{gap:7px;font-size:9px}.footer{padding:18px 17px;font-size:8px}.footer span:last-child{display:none}.page-heading{display:block;margin-bottom:22px}.heading-aside{margin-top:12px}.page-heading h1{font-size:40px}.hero{padding:28px 24px;min-height:245px}.hero h2{font-size:31px}.hero-art{display:none}.metric-grid{gap:8px}.metric-card{min-height:125px;padding:16px}.metric-number{font-size:37px}.section-head{margin-top:29px}.record-row{gap:10px;padding:14px 12px;grid-template-columns:30px 1fr auto}.record-index{height:30px;width:30px;font-size:15px}.record-title{font-size:12px}.record-meta{gap:2px 8px}.record-meta span+span:before{margin-right:8px}.record-trailing{gap:5px}.record-trailing svg{display:none}.toolbar{display:block}.search-box{max-width:none}.filter-tabs{margin-top:9px;width:max-content}.case-intro{display:block}.case-actions{margin-top:19px}.case-flow{padding:23px 19px}.flow-line{grid-template-columns:1fr 52px 1fr;gap:5px}.flow-entity strong{font-size:19px}.flow-connector span{font-size:9px}.flow-caption{display:block;line-height:1.7}.fact-row{grid-template-columns:115px 1fr}.facts-list{padding-left:18px;padding-right:18px}.source-list{padding-left:18px;padding-right:18px}.method-flow{padding:24px 20px}.method-steps,.method-criteria,.definition-grid{grid-template-columns:1fr;gap:19px}.method-steps:before{top:25px;bottom:28px;left:22px;right:auto;width:1px;height:auto}.method-step{display:grid;grid-template-columns:46px 1fr;column-gap:15px}.method-step h3{margin:2px 0 3px}.method-step p{grid-column:2}.method-index{grid-column:2;grid-row:1;align-self:end;margin-bottom:2px}.method-node{grid-row:1/4}.method-criteria{gap:13px}}
+@media(max-width:600px){.flow-caption{display:grid;gap:8px}.flow-caption span{display:flex;justify-content:space-between;gap:10px}}
+.sidebar{overflow-y:auto}.sidebar-group{margin-top:25px;margin-bottom:10px}.sidebar-bottom{padding-top:20px}
+.analysis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.analysis-grid .analysis-panel:first-child:nth-last-child(3){grid-column:1/-1}.analysis-panel{min-width:0}.analysis-body{padding:20px 26px 25px}.empty-analysis{border:1px dashed #cad8cb;background:#f8faf6;border-radius:6px;padding:24px;color:#66796c}.empty-analysis strong{display:block;color:#304638;font:400 20px var(--serif)}.empty-analysis p{font-size:11px;line-height:1.6;margin:7px 0 0}.cohort-block+.cohort-block{border-top:1px solid #e3eae3;margin-top:22px;padding-top:22px}.cohort-heading{display:flex;justify-content:space-between;gap:12px;color:#527258;font-size:10px;font-weight:750;letter-spacing:.09em;text-transform:uppercase}.cohort-heading strong{color:#697a6d}.cohort-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:17px}.cohort-stats div{background:#f5f8f2;border:1px solid #e3eae0;border-radius:5px;padding:12px}.cohort-stats small{display:block;font-size:9px;color:#7b8d7d;letter-spacing:.08em}.cohort-stats strong{display:block;margin-top:7px;font:400 22px var(--serif);color:#253d30;overflow-wrap:anywhere}.basis-detail{margin-top:16px;font-size:11px;color:#62766a}.basis-detail summary{cursor:pointer;font-weight:700}.basis-detail p{line-height:1.6;overflow-wrap:anywhere;margin:8px 0 0}.observation-list{display:grid;gap:0;margin-top:16px;border-top:1px solid #e8eee8}.observation-row{display:grid;grid-template-columns:1fr auto 16px;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #e8eee8;font-size:11px;color:#5e7463}.observation-row strong{color:#2f4935}.observation-row svg{width:13px;height:13px}.observation-row:hover span{text-decoration:underline}.outcome-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.outcome-panel{margin-top:20px}.outcome-row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #e8eee8;color:#586d5e;font-size:12px}.outcome-row:last-child{border-bottom:0}.outcome-row strong{font:400 18px var(--serif);color:#263d30}.quality-records{padding:13px 26px 23px}.quality-record{display:grid;grid-template-columns:minmax(0,1fr) auto 16px;gap:17px;align-items:center;border-bottom:1px solid #e8eee8;padding:15px 0}.quality-record:last-child{border-bottom:0}.quality-record strong{display:block;color:#283f32;font-size:12px}.quality-record small{display:block;color:#7d8d81;font-size:10px;margin-top:5px}.quality-record>span:nth-child(2){text-align:right}.quality-record>svg{width:15px;height:15px;color:#68846c}.quality-record:hover strong{text-decoration:underline}
+@media(max-width:850px){.analysis-grid{grid-template-columns:1fr}.analysis-grid .analysis-panel:first-child:nth-last-child(3){grid-column:auto}}
+@media(max-width:600px){.analysis-body,.quality-records{padding:17px}.cohort-stats{gap:5px}.cohort-stats div{padding:10px 7px}.cohort-stats small{font-size:8px}.cohort-stats strong{font-size:17px}.outcome-metrics{grid-template-columns:1fr}.quality-record{grid-template-columns:1fr 15px}.quality-record>span:nth-child(2){grid-column:1;text-align:left;grid-row:2}.quality-record>svg{grid-column:2;grid-row:1/3}.quality-record>span:nth-child(2) small{margin-top:6px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 </style>
@@ -38,6 +43,11 @@ main{padding:44px clamp(24px,4vw,60px) 80px;max-width:1640px;width:100%;margin:0
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
     <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10h.01"/></symbol>
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v4h16v-4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M7 15l4-4 3 2 6-7"/></symbol>
+    <symbol id="i-percent" viewBox="0 0 24 24"><circle cx="7" cy="7" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 19 19 5"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="m3 8 9-5 9 5M4 9h16M5 19h14M3 22h18M7 10v8m5-8v8m5-8v8"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
   </svg>
 
   <div class="app-shell">
@@ -51,7 +61,19 @@ main{padding:44px clamp(24px,4vw,60px) 80px;max-width:1640px;width:100%;margin:0
       <nav class="primary-nav">
         <a href="#overview" data-nav="overview"><svg><use href="#i-grid"/></svg>Overview<span class="nav-key">01</span></a>
         <a href="#research" data-nav="research"><svg><use href="#i-layers"/></svg>Research ledger<span class="nav-key">02</span></a>
-        <a href="#methodology" data-nav="methodology"><svg><use href="#i-route"/></svg>Methodology<span class="nav-key">03</span></a>
+      </nav>
+      <p class="sidebar-label sidebar-group">ANALYSIS</p>
+      <nav class="primary-nav">
+        <a href="#valuation" data-nav="valuation"><svg><use href="#i-chart"/></svg>Valuation<span class="nav-key">03</span></a>
+        <a href="#premiums" data-nav="premiums"><svg><use href="#i-percent"/></svg>Offer premiums<span class="nav-key">04</span></a>
+        <a href="#financing" data-nav="financing"><svg><use href="#i-bank"/></svg>Financing<span class="nav-key">05</span></a>
+        <a href="#synergies" data-nav="synergies"><svg><use href="#i-spark"/></svg>Synergies<span class="nav-key">06</span></a>
+        <a href="#outcomes" data-nav="outcomes"><svg><use href="#i-check"/></svg>Deal outcomes<span class="nav-key">07</span></a>
+      </nav>
+      <p class="sidebar-label sidebar-group">REFERENCE</p>
+      <nav class="primary-nav">
+        <a href="#quality" data-nav="quality"><svg><use href="#i-search"/></svg>Data quality<span class="nav-key">08</span></a>
+        <a href="#methodology" data-nav="methodology"><svg><use href="#i-book"/></svg>Methodology<span class="nav-key">09</span></a>
       </nav>
       <div class="sidebar-bottom">
         <div class="sidebar-note"><span class="small-accent"></span><p>Evidence first.<br><strong>Every figure has a status.</strong></p></div>
@@ -68,16 +90,17 @@ main{padding:44px clamp(24px,4vw,60px) 80px;max-width:1640px;width:100%;margin:0
       <main id="app" tabindex="-1" aria-live="polite">
         <div class="loading-state"><div class="loading-symbol"></div><p>Opening research workspace…</p></div>
       </main>
+      <noscript><p class="error-state">DealLens needs JavaScript to display the research workspace.</p></noscript>
       <footer class="footer"><span>DEALLENS <span class="footer-dot">/</span> SOURCE AUDITABLE RESEARCH</span><span id="footer-mode">LOCAL SNAPSHOT</span></footer>
     </div>
   </div>
 <script>
-/* Source-derived local preview. Regenerate with scripts/build_frontend_snapshot.py. */
-window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connected":false,"summary":{"inventory":1,"verified":0,"verified_status":0,"draft":1,"reviewed":0,"excluded":0},"portfolio":{"deal_count":0,"completion_rate":null,"completion_n":0,"completion_days_median":null,"ev_cohorts":[]},"deals":[{"id":"DL-00001","name":"Carlsberg UK Holdings / Britvic","bidder":"Carlsberg UK Holdings Limited","target":"Britvic plc","target_country":"GB","announcement_date":"2024-07-08","completion_date":"2025-01-16","transaction_status":"COMPLETED","review_status":"DRAFT","origin":"research/inbox","sector":null,"values":{"offer":{"amount":"13.15","currency":"GBP","unit":"currency/share","definition":"Total shareholder value including 25p special dividend","classification":"REPORTED","evidence":["ET"],"period":null,"sources":["S27"]},"equity":{"amount":"3311000000","currency":"GBP","unit":"currency","definition":"Reported rounded shareholder equity value inclusive of special dividend","classification":"REPORTED","evidence":["EEV"],"period":null,"sources":["S27"]},"enterprise":{"amount":"4104000000","currency":"GBP","unit":"currency","definition":"Reported rounded enterprise value","classification":"REPORTED","evidence":["EEV"],"period":null,"sources":["S27"]},"ev_ebitda":{"value":"13.54455445544554455445544554","unit":"ratio","currency":null,"basis":"LTM; Adjusted EBITDA before pre-IFRS16 rental charges","warnings":[],"qualifications":[]},"premium":{"value":"0.355670103092783505154639175","unit":"fraction","currency":null,"basis":"initial offer; unaffected_close","warnings":[],"qualifications":[]}},"selected_offer":{"id":"announced_total_value","date":"2024-07-08","basis":"First firm Rule 2.7 offer, including target special dividend; earlier indicative proposals are not entered"},"sources":[{"id":"S27","title":"Carlsberg / Britvic Rule 2.7 announcement","url":"https://via.ritzau.dk/ir-files/13560234/13952907/13641/2.7%20Announcement_Recommended%20offer%20to%20acquire%20Britvic%20plc.pdf","date":"2024-07-08","type":"ANNOUNCEMENT"},{"id":"SFY","title":"Britvic Annual Report and Accounts 2023 (issuer report mirrored by AnnualReports)","url":"https://www.annualreports.com/HostedData/AnnualReportArchive/b/LSE_BVIC_2023.pdf","date":"2023-12-05","type":"ANNUAL_REPORT"},{"id":"SH1","title":"Britvic interim results: six months ended 31 March 2024","url":"https://www.britvic.com/media/1mlaxssy/britvic-plc-interim-results-14-may-2024.pdf","date":"2024-05-15","type":"INTERIM_REPORT"},{"id":"SCOMP","title":"Scheme of arrangement becomes effective","url":"https://www.carlsberggroup.com/media/i2vbt04o/160125-announcement-of-scheme-effective-date.pdf","date":"2025-01-16","type":"ANNOUNCEMENT"},{"id":"SPUB","title":"Publication of scheme document announcement (not the full scheme)","url":"https://www.carlsberggroup.com/media/ctoc5uiy/publication-of-scheme-document-announcement.pdf","date":"2024-07-22","type":"ANNOUNCEMENT"},{"id":"SRES","title":"Britvic shareholder special resolution approving scheme arrangements","url":"https://data.fca.org.uk/artefacts/NSM/Portal/NI-000103290/NI-000103290.pdf","date":"2024-08-27","type":"REGULATOR"}],"evidence_count":12,"qa":{"publishable":false,"flags":[{"severity":"BLOCK_PUBLISH","code":"MANUAL_VERIFICATION_REQUIRED","message":"Owner's manual source and calculation verification is required."},{"severity":"REVIEW","code":"ASSUMPTION","message":"Researcher-supplied assumption; assess its stated basis."},{"severity":"REVIEW","code":"ASSUMPTION","message":"Researcher-supplied assumption; assess its stated basis."},{"severity":"REVIEW","code":"SOURCE_AMBIGUITY","message":"Rounded announcement value; reconstructed 302.5m. Do not substitute covenant EBITDA after rental charges."},{"severity":"REVIEW","code":"SOURCE_AMBIGUITY","message":"Rounded announcement amount; reconstructed adjusted earnings are 164.8m, not statutory net income."},{"severity":"REVIEW","code":"SOURCE_AMBIGUITY","message":"Illustrative annual window only; source says over five years, not a calendar-year earnings forecast."},{"severity":"REVIEW","code":"UNKNOWN_VALUE","message":"Explicitly unknown observation; no zero has been inferred."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"Illustrative annual run-rate case, not realised earnings; implementation costs excluded from recurring EBITDA."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"Illustrative annual run-rate case, not realised earnings; implementation costs excluded from recurring EBITDA."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"Illustrative annual run-rate case, not realised earnings; implementation costs excluded from recurring EBITDA."},{"severity":"REVIEW","code":"LTM_RECONCILIATION","message":"Selected and reconstructed figures differ for the same period; examine definitions and source restatements."},{"severity":"REVIEW","code":"LTM_RECONCILIATION","message":"Selected and reconstructed figures differ for the same period; examine definitions and source restatements."}]}}],"policy":"Only VERIFIED database records that pass QA enter portfolio analytics. Inbox research is provisional."};
+/* Source-derived public snapshot. Regenerate with scripts/build_frontend_preview.py. */
+window.DEALLENS_SNAPSHOT = {"scope":"Published research snapshot","database_connected":false,"release_version":null,"summary":{"inventory":1,"verified":0,"verified_status":0,"draft":1,"reviewed":0,"excluded":0},"portfolio":{"deal_count":0,"completion_rate":null,"completion_n":0,"completion_days_median":null,"completion_days_n":0,"status_counts":[],"ev_cohorts":[]},"metrics":{"disclosed_ev":{"eligible_n":0,"missing_n":0,"cohorts":[]},"ev_ebitda":{"eligible_n":0,"missing_n":0,"cohorts":[]},"ev_revenue":{"eligible_n":0,"missing_n":0,"cohorts":[]},"premium":{"eligible_n":0,"missing_n":0,"cohorts":[]},"cost_synergy_ev":{"eligible_n":0,"missing_n":0,"cohorts":[]},"synergy_adjusted_multiple":{"eligible_n":0,"missing_n":0,"cohorts":[]},"buyer_standalone_leverage":{"eligible_n":0,"missing_n":0,"cohorts":[]},"leverage_before_synergy":{"eligible_n":0,"missing_n":0,"cohorts":[]},"leverage_after_synergy":{"eligible_n":0,"missing_n":0,"cohorts":[]}},"deals":[{"id":"DL-00001","name":"Carlsberg UK Holdings / Britvic","bidder":"Carlsberg UK Holdings Limited","target":"Britvic plc","target_country":"GB","announcement_date":"2024-07-08","completion_date":"2025-01-16","transaction_status":"COMPLETED","review_status":"DRAFT","origin":"research/inbox","sector":null,"values":{"offer":{"amount":"13.15","currency":"GBP","unit":"currency/share","definition":"Total shareholder value including 25p special dividend","classification":"REPORTED","evidence":["ET"],"period":null,"sources":["S27"]},"equity":{"amount":"3311000000","currency":"GBP","unit":"currency","definition":"Reported rounded shareholder equity value inclusive of special dividend","classification":"REPORTED","evidence":["EEV"],"period":null,"sources":["S27"]},"enterprise":{"amount":"4104000000","currency":"GBP","unit":"currency","definition":"Reported rounded enterprise value","classification":"REPORTED","evidence":["EEV"],"period":null,"sources":["S27"]},"ev_ebitda":{"value":"13.54455445544554455445544554","unit":"ratio","currency":null,"basis":"LTM; Adjusted EBITDA before pre-IFRS16 rental charges","warnings":[],"qualifications":[]},"premium":{"value":"0.355670103092783505154639175","unit":"fraction","currency":null,"basis":"initial offer; unaffected_close","warnings":[],"qualifications":[]}},"selected_offer":{"id":"announced_total_value","date":"2024-07-08","basis":"First firm Rule 2.7 offer, including target special dividend; earlier indicative proposals are not entered"},"sources":[{"id":"S27","title":"Carlsberg / Britvic Rule 2.7 announcement","url":"https://via.ritzau.dk/ir-files/13560234/13952907/13641/2.7%20Announcement_Recommended%20offer%20to%20acquire%20Britvic%20plc.pdf","date":"2024-07-08","type":"ANNOUNCEMENT"},{"id":"SFY","title":"Britvic Annual Report and Accounts 2023 (issuer report mirrored by AnnualReports)","url":"https://www.annualreports.com/HostedData/AnnualReportArchive/b/LSE_BVIC_2023.pdf","date":"2023-12-05","type":"ANNUAL_REPORT"},{"id":"SH1","title":"Britvic interim results: six months ended 31 March 2024","url":"https://www.britvic.com/media/1mlaxssy/britvic-plc-interim-results-14-may-2024.pdf","date":"2024-05-15","type":"INTERIM_REPORT"},{"id":"SCOMP","title":"Scheme of arrangement becomes effective","url":"https://www.carlsberggroup.com/media/i2vbt04o/160125-announcement-of-scheme-effective-date.pdf","date":"2025-01-16","type":"ANNOUNCEMENT"},{"id":"SPUB","title":"Publication of scheme document announcement (not the full scheme)","url":"https://www.carlsberggroup.com/media/ctoc5uiy/publication-of-scheme-document-announcement.pdf","date":"2024-07-22","type":"ANNOUNCEMENT"},{"id":"SRES","title":"Britvic shareholder special resolution approving scheme arrangements","url":"https://data.fca.org.uk/artefacts/NSM/Portal/NI-000103290/NI-000103290.pdf","date":"2024-08-27","type":"REGULATOR"}],"evidence_count":12,"qa":{"publishable":false,"flags":[{"severity":"BLOCK_PUBLISH","code":"MANUAL_VERIFICATION_REQUIRED","message":"Owner's manual source and calculation verification is required."},{"severity":"REVIEW","code":"ASSUMPTION","message":"Researcher-supplied assumption; assess its stated basis."},{"severity":"REVIEW","code":"ASSUMPTION","message":"Researcher-supplied assumption; assess its stated basis."},{"severity":"REVIEW","code":"SOURCE_AMBIGUITY","message":"Rounded announcement value; reconstructed 302.5m. Do not substitute covenant EBITDA after rental charges."},{"severity":"REVIEW","code":"SOURCE_AMBIGUITY","message":"Rounded announcement amount; reconstructed adjusted earnings are 164.8m, not statutory net income."},{"severity":"REVIEW","code":"SOURCE_AMBIGUITY","message":"Illustrative annual window only; source says over five years, not a calendar-year earnings forecast."},{"severity":"REVIEW","code":"UNKNOWN_VALUE","message":"Explicitly unknown observation; no zero has been inferred."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"YTD lengths differ by one day; verify leap-year comparability."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"Illustrative annual run-rate case, not realised earnings; implementation costs excluded from recurring EBITDA."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"Illustrative annual run-rate case, not realised earnings; implementation costs excluded from recurring EBITDA."},{"severity":"REVIEW","code":"CALCULATION_WARNING","message":"Illustrative annual run-rate case, not realised earnings; implementation costs excluded from recurring EBITDA."},{"severity":"REVIEW","code":"LTM_RECONCILIATION","message":"Selected and reconstructed figures differ for the same period; examine definitions and source restatements."},{"severity":"REVIEW","code":"LTM_RECONCILIATION","message":"Selected and reconstructed figures differ for the same period; examine definitions and source restatements."}]}}],"policy":"Only attested VERIFIED records that pass QA enter portfolio analytics. Inbox research is provisional."};
 
 </script>
 <script>
-/* DealLens interface. Published pages use a generated research snapshot. */
+/* DealLens interface. A configured API supplies live data; otherwise the page uses a generated snapshot. */
 (() => {
   "use strict";
 
@@ -145,7 +168,7 @@ window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connect
       <div class="page-heading"><div><h1>Transaction overview</h1><p>An auditable view of the research inventory and the verified analytical sample.</p></div><span class="heading-aside">COVERAGE <strong>UK &amp; EUROPE</strong></span></div>
       <section class="hero"><div class="hero-copy"><span class="hero-tag">DEALLENS RESEARCH STANDARD</span><h2>See the deal.<br><em>Trace the evidence.</em></h2><p>Transaction terms, valuation context and source records in one workspace. Only verified, QA-publishable records enter the portfolio layer.</p></div>${heroGraphic()}</section>
       <div class="status-strip">${icon("info")}<span><strong>Sample integrity:</strong> ${escape(d.policy)}</span></div>
-      <div class="section-head"><div><h2>Research at a glance</h2><p>Counts reflect the published research snapshot.</p></div><span class="section-index">01 / COVERAGE</span></div>
+      <div class="section-head"><div><h2>Research at a glance</h2><p>Counts reflect the research data shown here.</p></div><span class="section-index">01 / COVERAGE</span></div>
       <div class="metric-grid">
         ${metric("Records tracked", s.inventory, "Validated research records")}
         ${metric("Verified sample", s.verified, "Eligible for portfolio analysis")}
@@ -156,7 +179,7 @@ window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connect
       <div class="content-grid"><section class="panel"><div class="panel-head"><div><h3>Disclosed EV sample</h3><p>Verified observations grouped by currency</p></div><span class="panel-kicker">N = ${cohorts.reduce((n, c) => n + c.n, 0)}</span></div>${chart}<div class="panel-bottom">No currency conversion or inferred enterprise value.</div></section>
       <section class="panel"><div class="panel-head"><div><h3>Research status</h3><p>Records by human review stage</p></div><span class="panel-kicker">${s.inventory} TOTAL</span></div><div class="pipeline">${pipeline}</div><div class="pipeline-caption"><strong>${s.verified} eligible</strong> for published analytics. Status counts include inbox research; stage widths use the inventory as denominator.</div></section></div>
       <div class="section-head"><div><h2>Research ledger</h2><p>Open a record to inspect its terms and sources.</p></div><a class="back-link" href="#research">View all ${icon("arrow")}</a></div>
-      <div class="research-list">${rows || `<div class="empty-list">No research records are present in this snapshot.</div>`}</div>`;
+      <div class="research-list">${rows || `<div class="empty-list">No research records are present in this dataset.</div>`}</div>`;
   }
 
   function research() {
@@ -175,6 +198,67 @@ window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connect
     const matches = state.data.deals.filter(d => (state.filter === "all" || d.review_status.toLowerCase() === state.filter)
       && [d.name, d.id, d.bidder, d.target, d.sector].some(v => String(v || "").toLowerCase().includes(query)));
     target.innerHTML = matches.length ? matches.map(record).join("") : `<div class="empty-list">No records match this search and filter.</div>`;
+  }
+
+  function formatObservation(cohort, value) {
+    if (value == null) return "Unavailable";
+    const number = Number(value);
+    if (!Number.isFinite(number)) return "Unavailable";
+    if (cohort.unit === "fraction") return `${(number * 100).toLocaleString("en-GB", { maximumFractionDigits: 1 })}%`;
+    if (cohort.unit === "ratio") return `${number.toLocaleString("en-GB", { maximumFractionDigits: 2 })}x`;
+    if (cohort.unit === "currency") return money({ amount: value, currency: cohort.currency });
+    return `${number.toLocaleString("en-GB", { maximumFractionDigits: 2 })} ${cohort.unit}`;
+  }
+
+  function metricPanel(metric, title, description) {
+    const report = state.data.metrics?.[metric];
+    const cohorts = report?.cohorts || [];
+    const count = cohorts.reduce((total, cohort) => total + cohort.n, 0);
+    const body = cohorts.length ? cohorts.map(cohort => {
+      const stats = cohort.statistics;
+      const entries = cohort.observations.map(item => `<a class="observation-row" href="#deal/${encodeURIComponent(item.deal_id)}"><span>${escape(item.deal_id)}</span><strong>${escape(formatObservation(cohort, item.value))}</strong>${icon("arrow")}</a>`).join("");
+      return `<div class="cohort-block"><div class="cohort-heading"><span>${escape(cohort.currency || cohort.unit)}</span><strong>n = ${cohort.n}</strong></div>
+        <div class="cohort-stats"><div><small>LOWER QUARTILE</small><strong>${escape(formatObservation(cohort, stats.q25))}</strong></div><div><small>MEDIAN</small><strong>${escape(formatObservation(cohort, stats.median))}</strong></div><div><small>UPPER QUARTILE</small><strong>${escape(formatObservation(cohort, stats.q75))}</strong></div></div>
+        <details class="basis-detail"><summary>Definition and comparison basis</summary><p>${escape(cohort.basis)}</p></details><div class="observation-list">${entries}</div></div>`;
+    }).join("") : `<div class="empty-analysis"><strong>No verified observations</strong><p>There is no publishable ${escape(title.toLowerCase())} sample. Missing values stay unavailable until a deal passes the manual verification and QA gates.</p></div>`;
+    const coverage = !report ? "This measure is unavailable in the current dataset."
+      : report.eligible_n === 0 ? "No verified deals are available for this measure."
+        : `${report.missing_n} of ${report.eligible_n} eligible deals have no meaningful observation for this measure.`;
+    return `<section class="panel analysis-panel"><div class="panel-head"><div><h3>${escape(title)}</h3><p>${escape(description)}</p></div><span class="panel-kicker">N = ${count}</span></div><div class="analysis-body">${body}</div><div class="panel-bottom">${coverage}</div></section>`;
+  }
+
+  function analysisPage(page) {
+    const pages = {
+      valuation: { title: "Valuation", intro: "Comparable transaction multiples and disclosed enterprise values, with each basis kept separate.", sections: [["disclosed_ev", "Disclosed enterprise value", "Reported value in its original currency"], ["ev_ebitda", "EV / EBITDA", "Selected earnings period and definition"], ["ev_revenue", "EV / revenue", "Selected revenue period and definition"]] },
+      premiums: { title: "Offer premiums", intro: "Selected offers compared with their stated unaffected price references.", sections: [["premium", "Offer premium", "Offer stage and reference price basis remain attached"]] },
+      financing: { title: "Financing & leverage", intro: "Illustrative leverage results from explicit financing inputs, shown only where calculable.", sections: [["buyer_standalone_leverage", "Buyer standalone leverage", "Before the transaction"], ["leverage_before_synergy", "Pro forma leverage", "Before eligible cost synergies"], ["leverage_after_synergy", "Leverage after synergies", "Illustrative eligible synergy case"]] },
+      synergies: { title: "Synergies", intro: "Disclosed cost synergy inputs and illustrative valuation adjustments, never treated as realised earnings.", sections: [["cost_synergy_ev", "Cost synergies / EV", "Eligible annual cost synergies against enterprise value"], ["synergy_adjusted_multiple", "Synergy-adjusted multiple", "Illustrative adjusted earnings basis"]] }
+    };
+    const item = pages[page];
+    return `${eyebrow("Verified portfolio / comparable cohorts")}<div class="page-heading"><div><h1>${escape(item.title)}</h1><p>${escape(item.intro)}</p></div><span class="heading-aside">${state.data.summary.verified} VERIFIED DEAL${state.data.summary.verified === 1 ? "" : "S"}</span></div>
+      <div class="status-strip">${icon("info")}<span>Only attested, QA-publishable records enter these summaries. Currency, period and definition are never silently pooled.</span></div>
+      <div class="analysis-grid">${item.sections.map(([metric, title, description]) => metricPanel(metric, title, description)).join("")}</div>`;
+  }
+
+  function outcomesPage() {
+    const p = state.data.portfolio;
+    const rate = p.completion_rate == null ? "Unavailable" : formatObservation({ unit: "fraction" }, p.completion_rate);
+    const days = p.completion_days_median == null ? "Unavailable" : `${Number(p.completion_days_median).toLocaleString("en-GB", { maximumFractionDigits: 0 })} days`;
+    const statuses = p.status_counts.map(item => `<div class="outcome-row"><span>${escape(titleCase(item.status))}</span><strong>${item.n}</strong></div>`).join("");
+    return `${eyebrow("Verified portfolio / transaction outcomes")}<div class="page-heading"><div><h1>Deal outcomes</h1><p>Completion status and timing from attested, QA-publishable transactions.</p></div><span class="heading-aside">${p.deal_count} VERIFIED DEAL${p.deal_count === 1 ? "" : "S"}</span></div>
+      <div class="metric-grid outcome-metrics">${metric("Verified deals", p.deal_count, "QA-publishable sample")}${metric("Completion rate", rate, `n=${p.completion_n} verified deals`)}${metric("Median time to completion", days, `n=${p.completion_days_n} completed with dates`)}</div>
+      <section class="panel outcome-panel"><div class="panel-head"><div><h3>Transaction status</h3><p>Counts use only the verified sample.</p></div></div><div class="analysis-body">${statuses || `<div class="empty-analysis"><strong>No verified outcomes yet</strong><p>The research ledger may contain draft cases, but they do not enter this portfolio view.</p></div>`}</div></section>`;
+  }
+
+  function qualityPage() {
+    const deals = state.data.deals;
+    const cards = deals.map(deal => {
+      const blockers = deal.qa.flags.filter(flag => ["BLOCK_PUBLISH", "ERROR"].includes(flag.severity)).length;
+      return `<a class="quality-record" href="#deal/${encodeURIComponent(deal.id)}"><span><strong>${escape(deal.name)}</strong><small>${escape(deal.id)} · ${escape(deal.origin)}</small></span><span>${badge(deal.review_status)}<small>${deal.sources.length} sources · ${deal.evidence_count} references · ${blockers} blockers</small></span>${icon("arrow")}</a>`;
+    }).join("");
+    return `${eyebrow("Research integrity / provenance")}<div class="page-heading"><div><h1>Data quality &amp; sources</h1><p>Review status, source coverage and publication blockers for every displayed record.</p></div><span class="heading-aside">${deals.length} RECORD${deals.length === 1 ? "" : "S"}</span></div>
+      <div class="metric-grid outcome-metrics">${metric("Records shown", deals.length, "Validated research records")}${metric("Verified sample", state.data.summary.verified, "Attested and QA-publishable")}${metric("Provisional records", state.data.summary.draft + state.data.summary.reviewed, "Outside portfolio statistics")}</div>
+      <section class="panel outcome-panel"><div class="panel-head"><div><h3>Record quality</h3><p>Open a case for its source ledger, definitions and QA flags.</p></div></div><div class="quality-records">${cards || `<div class="empty-analysis"><strong>No records available</strong><p>Add validated research to populate the ledger.</p></div>`}</div></section>`;
   }
 
   function sourcePills(fact, sources) {
@@ -198,15 +282,15 @@ window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connect
     const sourceList = sources.map(source => `<a class="source-link" href="${safeUrl(source.url)}" target="_blank" rel="noopener noreferrer"><span class="source-id">${escape(source.id)}</span><span><strong>${escape(source.title)}</strong><small>${escape(titleCase(source.type))} · ${date(source.date)}</small></span>${icon("external")}</a>`).join("");
     return `<div class="case-top"><a href="#research" class="back-link">${icon("arrow")} Back to ledger</a>${badge(deal.review_status)}</div>
       ${eyebrow(`Transaction record / ${deal.id}`)}
-      <div class="case-intro"><div><h1>${escape(deal.name)}</h1><p class="case-subtitle">${escape(deal.bidder)} / ${escape(deal.target)} · Announced ${date(deal.announcement_date)}</p></div><div class="case-actions"><button class="ghost-button" id="download-record" type="button">${icon("download")} Export record</button></div></div>
-      ${deal.review_status !== "VERIFIED" ? `<div class="draft-banner">${icon("info")}<span><strong>Provisional research record</strong>The terms below are part of the published research snapshot. They have not received the owner’s manual source and calculation sign-off, and do not enter portfolio statistics.</span></div>` : !deal.qa.publishable ? `<div class="draft-banner">${icon("info")}<span><strong>Excluded from portfolio analysis</strong>The record has VERIFIED status, but its current QA result blocks publication.</span></div>` : `<div class="status-strip">${icon("info")}<span><strong>Verified record.</strong> This record has passed the project’s manual verification and QA gates.</span></div>`}
+      <div class="case-intro"><div><h1>${escape(deal.name)}</h1><p class="case-subtitle">${escape(deal.bidder)} / ${escape(deal.target)} · Announced ${date(deal.announcement_date)}</p></div><div class="case-actions"><button class="ghost-button" id="download-record" type="button">${icon("download")} Download case summary</button></div></div>
+      ${deal.review_status !== "VERIFIED" ? `<div class="draft-banner">${icon("info")}<span><strong>Provisional research record</strong>The terms below come from this research record. They have not received the owner’s manual source and calculation sign-off, and do not enter portfolio statistics.</span></div>` : !deal.qa.publishable ? `<div class="draft-banner">${icon("info")}<span><strong>Excluded from portfolio analysis</strong>The record has VERIFIED status, but its current QA result blocks publication.</span></div>` : `<div class="status-strip">${icon("info")}<span><strong>Verified record.</strong> This record has passed the project’s manual verification and QA gates.</span></div>`}
       <section class="case-flow" aria-label="Transaction relationship diagram"><div class="flow-header"><span>TRANSACTION STRUCTURE</span><span>${escape(deal.id)} / ${escape(deal.review_status)}</span></div><div class="flow-line"><div class="flow-entity"><small>BIDDER</small><strong>${escape(deal.bidder)}</strong></div><div class="flow-connector"><span>${escape(offer || "Offer terms")}</span></div><div class="flow-entity right"><small>TARGET</small><strong>${escape(deal.target)}</strong></div></div><div class="flow-caption"><span>ANNOUNCED <strong>${date(deal.announcement_date)}</strong></span><span>TRANSACTION <strong>${escape(titleCase(deal.transaction_status))}</strong></span><span>COMPLETION <strong>${date(deal.completion_date)}</strong></span></div></section>
       <div class="case-grid"><section class="panel"><div class="panel-head"><div><h3>Recorded terms</h3><p>Figures retain their reported definitions and source links.</p></div><span class="panel-kicker">${escape(deal.review_status)}</span></div><div class="facts-list">
         ${factRow("Selected offer", offer, v.offer?.definition || deal.selected_offer?.basis, v.offer, sources)}
         ${factRow("Equity value", equity, v.equity?.definition, v.equity, sources)}
         ${factRow("Enterprise value", enterprise, v.enterprise?.definition, v.enterprise, sources)}
         ${factRow("Sector", deal.sector, "Analyst classification in research record", null, sources)}
-      </div></section><section class="panel"><div class="panel-head"><div><h3>Quality &amp; review</h3><p>Publication gate for this record</p></div></div><div class="quality-list"><div class="quality-stat"><span>Review status</span>${badge(deal.review_status)}</div><div class="quality-stat"><span>Source documents</span><strong>${sources.length}</strong></div><div class="quality-stat"><span>Evidence references</span><strong>${deal.evidence_count}</strong></div><div class="quality-stat"><span>Publication blockers</span><strong>${keyFlags.length}</strong></div>${flagText}${keyFlags.length > 3 ? `<p class="quality-hint">${keyFlags.length - 3} additional blocker${keyFlags.length - 3 === 1 ? "" : "s"} remain in the QA result.</p>` : ""}</div></section></div>
+      </div></section><section class="panel"><div class="panel-head"><div><h3>Quality &amp; review</h3><p>Publication gate for this record</p></div></div><div class="quality-list"><div class="quality-stat"><span>Review status</span>${badge(deal.review_status)}</div><div class="quality-stat"><span>Record source</span><span>${escape(deal.origin)}</span></div><div class="quality-stat"><span>Source documents</span><strong>${sources.length}</strong></div><div class="quality-stat"><span>Evidence references</span><strong>${deal.evidence_count}</strong></div><div class="quality-stat"><span>Publication blockers</span><strong>${keyFlags.length}</strong></div>${flagText}${keyFlags.length > 3 ? `<p class="quality-hint">${keyFlags.length - 3} additional blocker${keyFlags.length - 3 === 1 ? "" : "s"} remain in the QA result.</p>` : ""}</div></section></div>
       <section class="panel source-section"><div class="panel-head"><div><h3>Source ledger</h3><p>Direct links stored with the research record. A link does not imply independent verification.</p></div><span class="panel-kicker">${sources.length} SOURCES</span></div><div class="source-list">${sourceList || `<p class="absence">No source documents recorded.</p>`}</div></section>`;
   }
 
@@ -215,22 +299,30 @@ window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connect
       <div class="method-intro"><h1>From source<br>to defensible insight.</h1><p>DealLens separates provisional research from verified portfolio analysis. This is the actual gating logic used by the local research engine.</p></div>
       <section class="method-flow"><div class="method-steps"><div class="method-step"><span class="method-node">1</span><span class="method-index">CAPTURE</span><h3>Research</h3><p>Terms, financial observations and source references enter a validated deal record.</p></div><div class="method-step"><span class="method-node">2</span><span class="method-index">CHALLENGE</span><h3>Review</h3><p>Calculations, definitions, evidence and reasonableness flags are checked. A draft is still excluded.</p></div><div class="method-step"><span class="method-node">3</span><span class="method-index">PUBLISH</span><h3>Verify</h3><p>A named human attests to the review; the record must pass QA before entering portfolio analysis.</p></div></div><div class="method-rule"></div><div class="method-criteria"><div><strong>Reported ≠ calculated</strong><p>Original source values remain distinct from derived results and assumptions.</p></div><div><strong>Unknown ≠ zero</strong><p>Missing figures stay empty. The interface never substitutes a numeric zero.</p></div><div><strong>Comparable basis required</strong><p>Currency, period and financial definitions remain attached to cohorts.</p></div></div></section>
       <div class="section-head"><div><h2>How to read this workspace</h2><p>Visible status labels govern how each number may be used.</p></div></div>
-      <div class="definition-grid"><div class="definition-card"><span>01 / RESEARCH LEDGER</span><h3>Draft and reviewed cases</h3><p>These records can be inspected with their source links and review flags. They are working material and remain outside headline portfolio analytics.</p></div><div class="definition-card"><span>02 / PORTFOLIO LAYER</span><h3>Verified, publishable cases</h3><p>Only records stored as VERIFIED and passing QA contribute to aggregate figures. Cohorts retain their currency and valuation basis.</p></div><div class="definition-card"><span>03 / FINANCIAL VALUES</span><h3>Reported definitions</h3><p>Offer, equity and enterprise values preserve the definitions in the research record. The case view links figures to their recorded sources.</p></div><div class="definition-card"><span>04 / PUBLISHED WORKSPACE</span><h3>Read-only interface</h3><p>This screen presents the published research snapshot. Manual verification, research edits and database imports remain explicit actions in the Python workflow.</p></div></div>`;
+      <div class="definition-grid"><div class="definition-card"><span>01 / RESEARCH LEDGER</span><h3>Draft and reviewed cases</h3><p>These records can be inspected with their source links and review flags. They are working material and remain outside headline portfolio analytics.</p></div><div class="definition-card"><span>02 / PORTFOLIO LAYER</span><h3>Verified, publishable cases</h3><p>Only attested VERIFIED records that pass QA contribute to aggregate figures. Cohorts retain their currency and valuation basis.</p></div><div class="definition-card"><span>03 / FINANCIAL VALUES</span><h3>Reported definitions</h3><p>Offer, equity and enterprise values preserve the definitions in the research record. The case view links figures to their recorded sources.</p></div><div class="definition-card"><span>04 / RESEARCH WORKSPACE</span><h3>Read-only interface</h3><p>This screen presents research data without editing it. Manual verification, research edits and database imports remain explicit actions in the Python workflow.</p></div></div>`;
   }
 
   function navigate() {
     if (!state.data) return;
     const raw = location.hash.replace(/^#/, "") || "overview";
-    const [page, id] = raw.split("/");
-    const deal = page === "deal" ? state.data.deals.find(item => item.id === decodeURIComponent(id || "")) : null;
-    const name = deal ? "TRANSACTION RECORD" : ({ overview: "OVERVIEW", research: "RESEARCH LEDGER", methodology: "METHODOLOGY" })[page] || "OVERVIEW";
+    const [page, encodedId] = raw.split("/");
+    let id = null;
+    try { id = decodeURIComponent(encodedId || ""); } catch { /* Invalid URL is handled below. */ }
+    const deal = page === "deal" ? state.data.deals.find(item => item.id === id) : null;
+    const knownPage = ["overview", "research", "valuation", "premiums", "financing", "synergies", "outcomes", "quality", "methodology"].includes(page) && !encodedId;
+    const notFound = !deal && !knownPage;
+    const name = deal ? "TRANSACTION RECORD" : notFound ? "NOT FOUND" : ({ overview: "OVERVIEW", research: "RESEARCH LEDGER", valuation: "VALUATION", premiums: "OFFER PREMIUMS", financing: "FINANCING & LEVERAGE", synergies: "SYNERGIES", outcomes: "DEAL OUTCOMES", quality: "DATA QUALITY", methodology: "METHODOLOGY" })[page];
     document.getElementById("breadcrumb").textContent = name;
-    document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("active", link.dataset.nav === (deal ? "research" : page)));
-    app.innerHTML = deal ? casePage(deal) : page === "research" ? research() : page === "methodology" ? methodology() : overview();
+    document.querySelectorAll("[data-nav]").forEach(link => {
+      const active = link.dataset.nav === (deal ? "research" : page) && !notFound;
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "page"); else link.removeAttribute("aria-current");
+    });
+    app.innerHTML = deal ? casePage(deal) : notFound ? `<div class="error-state"><h1>Page not found</h1><p>That research page or deal ID is not in this dataset.</p><a class="back-link" href="#overview">${icon("arrow")} Return to overview</a></div>` : page === "research" ? research() : ["valuation", "premiums", "financing", "synergies"].includes(page) ? analysisPage(page) : page === "outcomes" ? outcomesPage() : page === "quality" ? qualityPage() : page === "methodology" ? methodology() : overview();
     if (page === "research") updateResearchResults();
     document.getElementById("sidebar").classList.remove("open");
     document.getElementById("menu-button").setAttribute("aria-expanded", "false");
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   app.addEventListener("input", (event) => {
@@ -248,7 +340,7 @@ window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connect
       const deal = state.data.deals.find(item => item.id === id);
       if (deal) {
         const blob = new Blob([JSON.stringify(deal, null, 2)], { type: "application/json" });
-        const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = `${deal.id}-research-record.json`; link.click();
+        const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = `${deal.id}-case-summary.json`; link.click();
         setTimeout(() => URL.revokeObjectURL(link.href), 1000);
       }
     }
@@ -258,19 +350,44 @@ window.DEALLENS_SNAPSHOT = {"scope":"Local research workspace","database_connect
     event.currentTarget.setAttribute("aria-expanded", String(open));
   });
   document.addEventListener("click", (event) => {
-    if (window.innerWidth <= 850 && !event.target.closest("#sidebar,#menu-button")) document.getElementById("sidebar").classList.remove("open");
+    if (window.innerWidth <= 850 && !event.target.closest("#sidebar,#menu-button")) {
+      document.getElementById("sidebar").classList.remove("open");
+      document.getElementById("menu-button").setAttribute("aria-expanded", "false");
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      document.getElementById("sidebar").classList.remove("open");
+      document.getElementById("menu-button").setAttribute("aria-expanded", "false");
+    }
   });
   window.addEventListener("hashchange", navigate);
 
   async function init() {
-    state.data = window.DEALLENS_SNAPSHOT;
+    const apiUrl = document.querySelector('meta[name="deallens-api"]')?.content;
+    if (apiUrl && ["http:", "https:"].includes(location.protocol)) {
+      try {
+        const response = await fetch(apiUrl, { cache: "no-store" });
+        if (!response.ok) throw new Error(`Data request failed (${response.status})`);
+        const data = await response.json();
+        if (data.error) throw new Error(data.error);
+        state.data = data;
+        state.mode = "live";
+      } catch (error) {
+        app.innerHTML = `<div class="error-state"><h1>Live data unavailable</h1><p>${escape(error.message)}</p></div>`;
+        return;
+      }
+    } else {
+      state.data = window.DEALLENS_SNAPSHOT;
+    }
     if (!state.data) {
       app.innerHTML = `<div class="error-state"><h2>Research data unavailable</h2><p>The published research snapshot is missing.</p></div>`;
       return;
     }
-    document.getElementById("sidebar-mode").textContent = "PUBLISHED RESEARCH";
-    document.getElementById("footer-mode").textContent = "SOURCE-DERIVED SNAPSHOT";
-    document.getElementById("clock").textContent = "PUBLISHED RESEARCH";
+    const modeLabel = state.mode === "live" ? "LIVE RESEARCH DATA" : "PUBLISHED SNAPSHOT";
+    document.getElementById("sidebar-mode").textContent = modeLabel;
+    document.getElementById("footer-mode").textContent = modeLabel + (state.data.release_version ? ` · RELEASE ${state.data.release_version}` : "");
+    document.getElementById("clock").textContent = modeLabel;
     navigate();
   }
   init();

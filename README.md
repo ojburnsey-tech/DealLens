@@ -8,7 +8,7 @@ for publishing and data policy.
 
 Reusable portfolio analytics, precedent screening and six research notebooks are also available; see [analytics documentation](docs/analytics.md). The real dataset still has zero VERIFIED transactions.
 
-Steps 8–20 are implemented: YAML ingestion, auditable finance calculations, financial QA and Companies House metadata. The full suite has **405 passing tests**; the independent finance review has **zero open CRITICAL/HIGH findings**.
+Steps 8–20 are implemented: YAML ingestion, auditable finance calculations, financial QA and Companies House metadata. The automated suite covers the research engine and web data gates; the independent finance review has **zero open CRITICAL/HIGH findings**.
 
 The Britvic case for steps 21–22 is **DRAFT**, with primary-source reconciliation tests. Its full scheme document and your manual sign-off remain outstanding. Read the [step-by-step acceptance checklist](docs/implementation_checklist.md), [deal review sheet](research/inbox/DL-00001_REVIEW.md) and [gold-standard reconciliation](docs/gold_standard_validation.md). The checklist records the independent finance-review outcome; the ZIP does not include the underlying review file.
 

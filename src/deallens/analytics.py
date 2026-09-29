@@ -138,6 +138,12 @@ def observations(deal: ResearchDeal, metric: str) -> list[Observation]:
 
 def metric_summary(records: Iterable[ResearchDeal], metric: str, *, group_by: Dimension | None = None) -> dict:
     deals, excluded = accepted_deals(records)
+    return _metric_summary_accepted(deals, excluded, metric, group_by=group_by)
+
+
+def _metric_summary_accepted(deals: list[ResearchDeal], excluded: list[dict], metric: str,
+                             *, group_by: Dimension | None = None) -> dict:
+    """Summarize records whose publication gate was checked by the caller."""
     groups: dict[tuple, list[Observation]] = defaultdict(list)
     missing, seen = [], set()
     for deal in deals:
@@ -170,6 +176,11 @@ def _share(matches: int, known: int, total: int, basis: str) -> dict:
 
 def portfolio_summary(records: Iterable[ResearchDeal]) -> dict:
     deals, excluded = accepted_deals(records)
+    return _portfolio_summary_accepted(deals, excluded)
+
+
+def _portfolio_summary_accepted(deals: list[ResearchDeal], excluded: list[dict]) -> dict:
+    """Summarize an already accepted cohort, including audited public releases."""
     n = len(deals)
     consideration = [d.profile.consideration_type for d in deals if d.profile.consideration_type]
     border = [dimension_value(d, 'cross_border') for d in deals if d.profile.ultimate_bidder_country]
@@ -187,7 +198,7 @@ def portfolio_summary(records: Iterable[ResearchDeal]) -> dict:
                                   'basis': 'Announcement to completion; completed deals only',
                                   'missing_n': len(completed) - len(days)}}
     for metric in ('disclosed_ev', 'ev_ebitda', 'ev_revenue', 'premium'):
-        result[metric] = metric_summary(deals, metric)
+        result[metric] = _metric_summary_accepted(deals, [], metric)
     return result
 
 

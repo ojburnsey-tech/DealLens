@@ -1,9 +1,10 @@
 # Implemented DealLens workflow
 
-**HTML research workspace:** Run `deallens-web` after installing the project,
-then open <http://127.0.0.1:8765>. The current preview shows one DRAFT Britvic
-research record and zero VERIFIED transactions. See the [interface guide](docs/frontend.md)
-for the source-derived offline HTML snapshot and data policy.
+**DealLens interface:** [Open the GitHub Pages site](https://ojburnsey-tech.github.io/DealLens/).
+GitHub Pages serves the standalone [index.html](index.html) directly, including
+its source-derived research snapshot. The current snapshot shows one DRAFT
+Britvic record and zero VERIFIED transactions. See the [interface guide](docs/frontend.md)
+for publishing and data policy.
 
 Reusable portfolio analytics, precedent screening and six research notebooks are also available; see [analytics documentation](docs/analytics.md). The real dataset still has zero VERIFIED transactions.
 

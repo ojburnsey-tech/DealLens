@@ -1,46 +1,30 @@
-# DealLens HTML workspace
+# DealLens web interface
 
-The interface is a read-only local research workspace. It shows validated inbox
-YAML and database records, but portfolio analytics draw only on `VERIFIED`
-database records that pass the existing QA gate. The Britvic record currently
-remains `DRAFT`, so the valuation sample is intentionally empty.
+Open the [DealLens site](https://ojburnsey-tech.github.io/DealLens/) to go straight
+to the research workspace. GitHub Pages publishes the root `index.html`; the
+page contains its CSS, JavaScript, and source-derived research data, so visitors
+do not need to install Python or start a local server.
 
-## Run
+The site is read-only. Its data is generated from validated repository research
+when the root page is rebuilt and committed. GitHub Pages does not execute the
+Python research engine or connect to a live DuckDB database. The currently
+included Britvic case is DRAFT; it remains visible in the ledger but does not
+count as a verified portfolio observation.
 
-From the project root, install the package dependencies and start the server:
+This repository already publishes GitHub Pages from the `main` branch. Once
+the root `index.html` is pushed, the existing Pages URL opens the interface
+instead of displaying the README.
+
+To regenerate the same page locally after changing research or interface files:
 
 ```bash
 python -m pip install -e .
-deallens-web
-```
-
-Open <http://127.0.0.1:8765>. `python -m deallens.web --port 9000` also works.
-Use `--project` to point to a different research directory and `--db` to select
-an existing DuckDB file. No database is created just to display the inbox.
-There are no write endpoints or browser-side verification controls.
-
-For a browser-only preview, open `src/deallens/frontend/index.html`. It uses a
-bundled snapshot generated from the repository's validated research. Refresh
-that snapshot after editing the research files:
-
-```bash
-python scripts/build_frontend_snapshot.py
 python scripts/build_frontend_preview.py
 ```
 
-The browser labels the bundled preview separately from live local data. Opening
-the HTML directly does not refresh the snapshot or access the database.
-`DealLens-preview.html` combines the HTML, CSS, JavaScript and snapshot into
-one offline file for easy review.
-
-## Files
-
-- `src/deallens/frontend/index.html`: page structure and accessible navigation
-- `src/deallens/frontend/styles.css`: responsive visual system
-- `src/deallens/frontend/app.js`: views, search, filters, source links, export
-- `src/deallens/frontend/data.js`: generated source-derived offline snapshot
-- `src/deallens/web.py`: read-only HTTP API and static server
-
-The deal view shows reported values alongside their source IDs and definitions.
-It does not elevate a source link into a claim that its content has been
-independently reviewed. Export saves the displayed research record as JSON.
+Commit the generated `index.html` with any research or interface updates to
+publish them. Open it directly in a browser for a local preview. The source assets
+live in `src/deallens/frontend/`; `src/deallens/web.py` remains available for
+optional local API use. A source link in the ledger identifies the recorded
+source; it does not imply independent review. Export downloads the displayed
+research record as JSON.

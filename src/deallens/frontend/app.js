@@ -1,4 +1,4 @@
-/* DealLens interface. The server supplies live local data; data.js is a source-derived offline snapshot. */
+/* DealLens interface. Published pages use a generated research snapshot. */
 (() => {
   "use strict";
 
@@ -66,9 +66,9 @@
       <div class="page-heading"><div><h1>Transaction overview</h1><p>An auditable view of the research inventory and the verified analytical sample.</p></div><span class="heading-aside">COVERAGE <strong>UK &amp; EUROPE</strong></span></div>
       <section class="hero"><div class="hero-copy"><span class="hero-tag">DEALLENS RESEARCH STANDARD</span><h2>See the deal.<br><em>Trace the evidence.</em></h2><p>Transaction terms, valuation context and source records in one workspace. Only verified, QA-publishable records enter the portfolio layer.</p></div>${heroGraphic()}</section>
       <div class="status-strip">${icon("info")}<span><strong>Sample integrity:</strong> ${escape(d.policy)}</span></div>
-      <div class="section-head"><div><h2>Research at a glance</h2><p>Counts reflect the current local inventory.</p></div><span class="section-index">01 / COVERAGE</span></div>
+      <div class="section-head"><div><h2>Research at a glance</h2><p>Counts reflect the published research snapshot.</p></div><span class="section-index">01 / COVERAGE</span></div>
       <div class="metric-grid">
-        ${metric("Records tracked", s.inventory, "Database and validated inbox")}
+        ${metric("Records tracked", s.inventory, "Validated research records")}
         ${metric("Verified sample", s.verified, "Eligible for portfolio analysis")}
         ${metric("Draft research", s.draft, "Provisional, excluded from aggregates")}
         ${metric("Source records", d.deals.reduce((n, deal) => n + deal.sources.length, 0), "Linked to tracked records")}
@@ -77,7 +77,7 @@
       <div class="content-grid"><section class="panel"><div class="panel-head"><div><h3>Disclosed EV sample</h3><p>Verified observations grouped by currency</p></div><span class="panel-kicker">N = ${cohorts.reduce((n, c) => n + c.n, 0)}</span></div>${chart}<div class="panel-bottom">No currency conversion or inferred enterprise value.</div></section>
       <section class="panel"><div class="panel-head"><div><h3>Research status</h3><p>Records by human review stage</p></div><span class="panel-kicker">${s.inventory} TOTAL</span></div><div class="pipeline">${pipeline}</div><div class="pipeline-caption"><strong>${s.verified} eligible</strong> for published analytics. Status counts include inbox research; stage widths use the inventory as denominator.</div></section></div>
       <div class="section-head"><div><h2>Research ledger</h2><p>Open a record to inspect its terms and sources.</p></div><a class="back-link" href="#research">View all ${icon("arrow")}</a></div>
-      <div class="research-list">${rows || `<div class="empty-list">No research records are present in the local workspace.</div>`}</div>`;
+      <div class="research-list">${rows || `<div class="empty-list">No research records are present in this snapshot.</div>`}</div>`;
   }
 
   function research() {
@@ -120,7 +120,7 @@
     return `<div class="case-top"><a href="#research" class="back-link">${icon("arrow")} Back to ledger</a>${badge(deal.review_status)}</div>
       ${eyebrow(`Transaction record / ${deal.id}`)}
       <div class="case-intro"><div><h1>${escape(deal.name)}</h1><p class="case-subtitle">${escape(deal.bidder)} / ${escape(deal.target)} · Announced ${date(deal.announcement_date)}</p></div><div class="case-actions"><button class="ghost-button" id="download-record" type="button">${icon("download")} Export record</button></div></div>
-      ${deal.review_status !== "VERIFIED" ? `<div class="draft-banner">${icon("info")}<span><strong>Provisional research record</strong>The terms below are stored in a local research record. They have not received the owner’s manual source and calculation sign-off, and do not enter portfolio statistics.</span></div>` : !deal.qa.publishable ? `<div class="draft-banner">${icon("info")}<span><strong>Excluded from portfolio analysis</strong>The record has VERIFIED status, but its current QA result blocks publication.</span></div>` : `<div class="status-strip">${icon("info")}<span><strong>Verified record.</strong> This record has passed the project’s manual verification and QA gates.</span></div>`}
+      ${deal.review_status !== "VERIFIED" ? `<div class="draft-banner">${icon("info")}<span><strong>Provisional research record</strong>The terms below are part of the published research snapshot. They have not received the owner’s manual source and calculation sign-off, and do not enter portfolio statistics.</span></div>` : !deal.qa.publishable ? `<div class="draft-banner">${icon("info")}<span><strong>Excluded from portfolio analysis</strong>The record has VERIFIED status, but its current QA result blocks publication.</span></div>` : `<div class="status-strip">${icon("info")}<span><strong>Verified record.</strong> This record has passed the project’s manual verification and QA gates.</span></div>`}
       <section class="case-flow" aria-label="Transaction relationship diagram"><div class="flow-header"><span>TRANSACTION STRUCTURE</span><span>${escape(deal.id)} / ${escape(deal.review_status)}</span></div><div class="flow-line"><div class="flow-entity"><small>BIDDER</small><strong>${escape(deal.bidder)}</strong></div><div class="flow-connector"><span>${escape(offer || "Offer terms")}</span></div><div class="flow-entity right"><small>TARGET</small><strong>${escape(deal.target)}</strong></div></div><div class="flow-caption"><span>ANNOUNCED <strong>${date(deal.announcement_date)}</strong></span><span>TRANSACTION <strong>${escape(titleCase(deal.transaction_status))}</strong></span><span>COMPLETION <strong>${date(deal.completion_date)}</strong></span></div></section>
       <div class="case-grid"><section class="panel"><div class="panel-head"><div><h3>Recorded terms</h3><p>Figures retain their reported definitions and source links.</p></div><span class="panel-kicker">${escape(deal.review_status)}</span></div><div class="facts-list">
         ${factRow("Selected offer", offer, v.offer?.definition || deal.selected_offer?.basis, v.offer, sources)}
@@ -136,7 +136,7 @@
       <div class="method-intro"><h1>From source<br>to defensible insight.</h1><p>DealLens separates provisional research from verified portfolio analysis. This is the actual gating logic used by the local research engine.</p></div>
       <section class="method-flow"><div class="method-steps"><div class="method-step"><span class="method-node">1</span><span class="method-index">CAPTURE</span><h3>Research</h3><p>Terms, financial observations and source references enter a validated deal record.</p></div><div class="method-step"><span class="method-node">2</span><span class="method-index">CHALLENGE</span><h3>Review</h3><p>Calculations, definitions, evidence and reasonableness flags are checked. A draft is still excluded.</p></div><div class="method-step"><span class="method-node">3</span><span class="method-index">PUBLISH</span><h3>Verify</h3><p>A named human attests to the review; the record must pass QA before entering portfolio analysis.</p></div></div><div class="method-rule"></div><div class="method-criteria"><div><strong>Reported ≠ calculated</strong><p>Original source values remain distinct from derived results and assumptions.</p></div><div><strong>Unknown ≠ zero</strong><p>Missing figures stay empty. The interface never substitutes a numeric zero.</p></div><div><strong>Comparable basis required</strong><p>Currency, period and financial definitions remain attached to cohorts.</p></div></div></section>
       <div class="section-head"><div><h2>How to read this workspace</h2><p>Visible status labels govern how each number may be used.</p></div></div>
-      <div class="definition-grid"><div class="definition-card"><span>01 / RESEARCH LEDGER</span><h3>Draft and reviewed cases</h3><p>These records can be inspected with their source links and review flags. They are working material and remain outside headline portfolio analytics.</p></div><div class="definition-card"><span>02 / PORTFOLIO LAYER</span><h3>Verified, publishable cases</h3><p>Only records stored as VERIFIED and passing QA contribute to aggregate figures. Cohorts retain their currency and valuation basis.</p></div><div class="definition-card"><span>03 / FINANCIAL VALUES</span><h3>Reported definitions</h3><p>Offer, equity and enterprise values preserve the definitions in the research record. The case view links figures to their recorded sources.</p></div><div class="definition-card"><span>04 / LOCAL WORKSPACE</span><h3>Read-only interface</h3><p>This screen presents the local research inventory. Manual verification, research edits and database imports remain explicit actions in the Python workflow.</p></div></div>`;
+      <div class="definition-grid"><div class="definition-card"><span>01 / RESEARCH LEDGER</span><h3>Draft and reviewed cases</h3><p>These records can be inspected with their source links and review flags. They are working material and remain outside headline portfolio analytics.</p></div><div class="definition-card"><span>02 / PORTFOLIO LAYER</span><h3>Verified, publishable cases</h3><p>Only records stored as VERIFIED and passing QA contribute to aggregate figures. Cohorts retain their currency and valuation basis.</p></div><div class="definition-card"><span>03 / FINANCIAL VALUES</span><h3>Reported definitions</h3><p>Offer, equity and enterprise values preserve the definitions in the research record. The case view links figures to their recorded sources.</p></div><div class="definition-card"><span>04 / PUBLISHED WORKSPACE</span><h3>Read-only interface</h3><p>This screen presents the published research snapshot. Manual verification, research edits and database imports remain explicit actions in the Python workflow.</p></div></div>`;
   }
 
   function navigate() {
@@ -184,19 +184,14 @@
   window.addEventListener("hashchange", navigate);
 
   async function init() {
-    try {
-      const response = await fetch("/api/data", { cache: "no-store" });
-      if (!response.ok) throw new Error(`Local data request failed (${response.status})`);
-      const data = await response.json();
-      if (data.error) throw new Error(data.error);
-      state.data = data; state.mode = "live";
-    } catch (error) {
-      if (window.DEALLENS_SNAPSHOT) { state.data = window.DEALLENS_SNAPSHOT; state.mode = "snapshot"; }
-      else { app.innerHTML = `<div class="error-state"><h2>Workspace unavailable</h2><p>${escape(error.message)}</p></div>`; return; }
+    state.data = window.DEALLENS_SNAPSHOT;
+    if (!state.data) {
+      app.innerHTML = `<div class="error-state"><h2>Research data unavailable</h2><p>The published research snapshot is missing.</p></div>`;
+      return;
     }
-    document.getElementById("sidebar-mode").textContent = state.mode === "live" ? "LIVE LOCAL DATA" : "BUNDLED SNAPSHOT";
-    document.getElementById("footer-mode").textContent = state.mode === "live" ? "LIVE LOCAL DATA" : "BUNDLED RESEARCH SNAPSHOT";
-    document.getElementById("clock").textContent = state.mode === "live" ? "LIVE LOCAL DATA" : "BUNDLED SNAPSHOT";
+    document.getElementById("sidebar-mode").textContent = "PUBLISHED RESEARCH";
+    document.getElementById("footer-mode").textContent = "SOURCE-DERIVED SNAPSHOT";
+    document.getElementById("clock").textContent = "PUBLISHED RESEARCH";
     navigate();
   }
   init();

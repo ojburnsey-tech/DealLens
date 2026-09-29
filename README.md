@@ -1,12 +1,13 @@
 # Implemented DealLens workflow
 
-[![Deploy or open the DealLens dashboard](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=https://github.com/ojburnsey-tech/DealLens&branch=main&mainModule=app.py)
-
-The repository's web entry point is [`app.py`](app.py). GitHub-backed Streamlit hosting should use `app.py` as the main file; it opens the dashboard rather than rendering this README. The app starts safely with an empty public view until an audited release is available under `public/release/` or configured with `DEALLENS_PUBLIC_RELEASE`.
+**HTML research workspace:** Run `deallens-web` after installing the project,
+then open <http://127.0.0.1:8765>. The current preview shows one DRAFT Britvic
+research record and zero VERIFIED transactions. See the [interface guide](docs/frontend.md)
+for the source-derived offline HTML snapshot and data policy.
 
 Reusable portfolio analytics, precedent screening and six research notebooks are also available; see [analytics documentation](docs/analytics.md). The real dataset still has zero VERIFIED transactions.
 
-Steps 8–20 are implemented: YAML ingestion, auditable finance calculations, financial QA and Companies House metadata. The full suite has **408 passing tests**; the independent finance review has **zero open CRITICAL/HIGH findings**.
+Steps 8–20 are implemented: YAML ingestion, auditable finance calculations, financial QA and Companies House metadata. The full suite has **405 passing tests**; the independent finance review has **zero open CRITICAL/HIGH findings**.
 
 The Britvic case for steps 21–22 is **DRAFT**, with primary-source reconciliation tests. Its full scheme document and your manual sign-off remain outstanding. Read the [step-by-step acceptance checklist](docs/implementation_checklist.md), [deal review sheet](research/inbox/DL-00001_REVIEW.md) and [gold-standard reconciliation](docs/gold_standard_validation.md). The checklist records the independent finance-review outcome; the ZIP does not include the underlying review file.
 

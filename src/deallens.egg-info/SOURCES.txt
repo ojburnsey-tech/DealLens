@@ -14,15 +14,19 @@ src/deallens/releases.py
 src/deallens/reports.py
 src/deallens/research.py
 src/deallens/store.py
+src/deallens/web.py
 src/deallens.egg-info/PKG-INFO
 src/deallens.egg-info/SOURCES.txt
 src/deallens.egg-info/dependency_links.txt
 src/deallens.egg-info/entry_points.txt
 src/deallens.egg-info/requires.txt
 src/deallens.egg-info/top_level.txt
+src/deallens/frontend/app.js
+src/deallens/frontend/data.js
+src/deallens/frontend/index.html
+src/deallens/frontend/styles.css
 tests/test_analytics_precedents.py
 tests/test_companies_house.py
-tests/test_dashboard.py
 tests/test_finance.py
 tests/test_finance_review_regressions.py
 tests/test_gold_standard.py
@@ -30,3 +34,4 @@ tests/test_qa.py
 tests/test_releases.py
 tests/test_reports.py
 tests/test_research.py
+tests/test_web.py

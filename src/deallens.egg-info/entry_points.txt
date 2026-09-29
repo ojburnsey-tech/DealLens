@@ -1,2 +1,3 @@
 [console_scripts]
 deallens = deallens.cli:main
+deallens-web = deallens.web:main
